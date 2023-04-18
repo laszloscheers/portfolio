@@ -13,9 +13,84 @@ html{
      url("../public/assets/fonts/AdobeCleanBold.ttf") format("truetype");
     font-weight:bold;
 }
+
 body{
     font-family: "AdobeCleanRegular","Segoe UI";
 }
+
 .bold{
     font-family: "AdobeCleanBold","Segoe UI";
+}
+
+.modal{
+    font-family: "AdobeCleanBold", "Segoe UI";
+    font-size:larger;
+    color: #008cf4;
+}
+
+.btn-clip{
+    background-color: #fae39d;
+    color: rgba(0, 0, 0, 0.7);
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 5px;
+    border-color: rgba(0, 0, 0, 0.55);
+    padding:2% 3% 2% 3%;
+    text-decoration: none;
+}
+
+.btn-clip span{
+    color: #008cf4;
+}
+
+.btn-clip:hover{
+    background-color: #fae39d;
+    color: rgba(0, 0, 0, 0.55);
+    border-radius: 5px;
+    border-color: #fae39d;
+    transform:scale(1.02);
+}
+
+.btn-clip:hover span{
+    color: rgba(0, 0, 0, 0.55) !important;
+}
+
+#modal-p{
+    padding:5% 5% 10% 3%;
+}
+
+#modal-p div p{
+    font-size:x-large
+}
+.modal-header{
+    border-bottom: none !important;
+}
+
+.app-link:hover{
+    color: #4064ac;
+    transition: none;
+}
+
+.app-nav-link:hover{
+    color: rgba(0, 0, 0, 0.7);
+    transition: none;
+    transform: scale(1.01);
+}
+
+.section-link:hover{
+    color: #4064ac;
+}
+
+.section-link:hover .expand{
+    color: #4064ac;
+   
+    transform: scale(1.2);
+}
+
+.top{
+    transition: none;
+}
+
+.modal-content{
+    background-color: #f8f8f8;
 }
