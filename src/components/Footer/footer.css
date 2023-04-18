@@ -1,0 +1,12 @@
+.footer-col p{
+  margin-bottom: 0.7rem;
+}
+
+.footer-link{
+  background-color: #ffffff;
+  border: none;
+}
+
+.footer-link:hover{
+  background-color: #ffffff;
+}

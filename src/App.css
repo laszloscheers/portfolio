@@ -1,38 +1,21 @@
-.App {
-  text-align: center;
+html{
+    scroll-padding-top: 70px;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+@font-face {
+    font-family: "AdobeCleanRegular";
+    src: local("AdobeCleanRegular"),
+     url("../public/assets/fonts/AdobeCleanRegular.ttf") format("truetype");
+    font-weight:normal;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+@font-face {
+    font-family: "AdobeCleanBold";
+    src: local("AdobeCleanBold"),
+     url("../public/assets/fonts/AdobeCleanBold.ttf") format("truetype");
+    font-weight:bold;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+body{
+    font-family: "AdobeCleanRegular","Segoe UI";
 }
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.bold{
+    font-family: "AdobeCleanBold","Segoe UI";
 }

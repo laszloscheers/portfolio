@@ -1,0 +1,65 @@
+.hero{
+    background-color: #f8f8f8;
+}
+
+.hero-row{
+    padding:10% 0% 13% 0%;
+}
+
+.hero-col{
+    padding:3% 0% 1% 1%;
+}
+
+.hero-col h1{
+    font-size: calc(37px + (47 - 37) * ((100vw - 320px) / (1600 - 320)));
+    margin-bottom: calc(20px + (35 - 20) * ((100vw - 320px) / (1600 - 320)));
+    padding-right: 15%;
+}
+
+.hero-col p{
+    font-size: larger;
+    padding-right: 15%;
+}
+
+.hero-img{
+    max-height: 346px;
+}
+
+.section-first{
+    background-color: #fae39d;
+}
+
+.section-second{
+    background-color: #f8f8f8;
+}
+
+.section-third{
+    background-color: #dce8f8;
+}
+
+.p-anchors {
+    display: inline;
+    color: #008cf4;
+}
+
+.row-sections{
+    padding:9% 0% 10% 0%;
+}
+
+.row-sections div p{
+    max-width: 70%;
+}
+
+.sections-img{
+    max-height:400px;
+}
+
+.hello-link{
+    display: inline;
+    background-color: #f8f8f8;
+    border: none;
+}
+
+.hello-link:hover{
+    background-color: #f8f8f8;
+}
