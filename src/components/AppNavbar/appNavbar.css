@@ -1,0 +1,28 @@
+.navbar{
+    height:70px;
+}
+.top{
+    background-color: #f8f8f8 !important;
+    transition: all .5s ease-in-out;
+}
+
+.scroll { 
+	background-color: #dce8f8 !important;
+    transition: all .5s ease-in-out;
+}
+
+.brand{
+    color: #008cf4;
+    text-decoration: none;
+    border: none;
+    font-size:xx-large
+}
+.languages{
+    border: none;
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+}
+.nav-bar-link{
+    font-size: larger;
+    border: none;
+}

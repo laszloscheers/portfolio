@@ -1,0 +1,39 @@
+.footer-col p{
+  margin-bottom: 0.7rem;
+}
+
+.footer-link{
+  background-color: #ffffff;
+  border: none;
+}
+
+.footer-link:hover{
+  background-color: #ffffff;
+}
+
+#back_to_top_cont{
+  position:fixed;
+  bottom: 10%;
+  right: 3%;
+  transition: all .7s ease-in-out;
+}
+
+.back_to_top{
+  font-size: 400%;
+  color: #008cf4;
+  transition: .2s;
+  border-radius: 100%; 
+}
+
+.back_to_top:hover{
+  cursor: pointer ;
+  color: #4064ac;
+  border-radius: 100%; 
+  transition: .2s;
+  transform:scale(1.2)
+}
+
+.arrow-up-hidden{
+  display: none;
+  transition: all .7s ease-in-out;
+}
