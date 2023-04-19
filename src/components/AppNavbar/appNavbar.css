@@ -1,6 +1,9 @@
+/* Fixed height for navbar*/
 .navbar{
     height:70px;
 }
+
+/* Top and scroll styles for navbar*/
 .top{
     background-color: #f8f8f8 !important;
     transition: all .5s ease-in-out;
@@ -11,17 +14,22 @@
     transition: all .5s ease-in-out;
 }
 
+/* Brand*/
 .brand{
     color: #008cf4;
     text-decoration: none;
     border: none;
     font-size:xx-large
 }
+
+/* Languages*/
 .languages{
     border: none;
     padding-right: 0 !important;
     padding-left: 0 !important;
 }
+
+/* Every link*/
 .nav-bar-link{
     font-size: larger;
     border: none;

@@ -1,3 +1,4 @@
+/* Hero Section */
 .hero{
     background-color: #f8f8f8;
 }
@@ -25,6 +26,7 @@
     max-height: 346px;
 }
 
+/* Section Colours */
 .section-first{
     background-color: #fae39d;
 }
@@ -37,11 +39,13 @@
     background-color: #dce8f8;
 }
 
+/* All anchors in Home style */
 .p-anchors {
     display: inline;
     color: #008cf4;
 }
 
+/* Sections style and layout */
 .row-sections{
     padding:9% 0% 10% 0%;
 }

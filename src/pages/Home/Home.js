@@ -1,17 +1,18 @@
 import { useState } from 'react';
 import { useTranslation } from "react-i18next";
-import { Container, Row, Col, Modal } from 'react-bootstrap';
+import { Container, Row, Col, Modal, Image } from 'react-bootstrap';
 import { HiOutlineMail } from 'react-icons/hi';
 import { RxCopy } from 'react-icons/rx';
 import { ImArrowRight2 } from 'react-icons/im';
-import Image from 'react-bootstrap/Image'
 
 import "./home.css";
 
 function Home() {
 
+    // Language swapping tool
     const { t } = useTranslation()
 
+    // Handle visivility for email's modal
     const [show, setShow] = useState(false);
 
     const handleClose = () => setShow(false);
@@ -20,6 +21,7 @@ function Home() {
 
     return (
         <div>
+            {/*Hero Section*/}
             <section className="hero">
                 <Container>
                     <Row className="hero-row">
@@ -61,6 +63,8 @@ function Home() {
                     </Row>
                 </Container>
             </section>
+
+            {/*First Project Section*/}
             <section className="section-first" id="littletowns-agora">
                 <Container>
                     <Row className="row-sections d-flex align-items-center">
@@ -75,6 +79,8 @@ function Home() {
                     </Row>
                 </Container>
             </section>
+            
+            {/*Second Project Section*/}
             <section className="section-second" id="festrip-tickets">
                 <Container>
                     <Row className="row-sections d-flex align-items-center">
@@ -89,6 +95,8 @@ function Home() {
                     </Row>
                 </Container>
             </section>
+
+            {/*Third Project Section*/}
             <section className="section-third" id="football-hub">
                 <Container>
                     <Row className="row-sections d-flex align-items-center">
@@ -103,13 +111,15 @@ function Home() {
                     </Row>
                 </Container>
             </section>
+
+            {/*Fourth Project Section*/}
             <section className="section-first" id="watsons">
                 <Container>
                     <Row className="row-sections d-flex align-items-center">
                         <Col md>
                             <h1 className="bold mb-4">Watson's Detective Agency</h1>
                             <p>{t('watson\'s_description')}</p>
-                            <a href="https://littletownsagora.fly.dev/" target="_blank" rel="noreferrer" className='nav-link bold section-link p-anchors mt-3' >{t('visit_web')}<span className='ms-2'><ImArrowRight2 className='expand'/></span></a>
+                            <a href="https://littletownsagora.fly.dev/" target="_blank" rel="noreferrer" className='nav-link bold section-link p-anchors mt-3' >{t('visit_web')}<span className='ms-2 '><ImArrowRight2 className='expand'/></span></a>
                         </Col>
                         <Col md className="d-flex justify-content-start">
                             <Image src="./assets/images/littletown.png" alt="Example of Litletown's web page" className="sections-img" ></Image>
