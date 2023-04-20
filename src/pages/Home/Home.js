@@ -85,7 +85,7 @@ function Home() {
                 <Container>
                     <Row className="row-sections d-flex align-items-center">
                         <Col md>
-                            <h1 className="bold mb-4">Festrip Tickets</h1>
+                            <h1 className="bold mb-4">{t('festrip_title')}</h1>
                             <p>{t('festrip_description')}</p>
                             <a href="https://festrip.fly.dev/" target="_blank" rel="noreferrer" className='nav-link bold section-link p-anchors mt-3' >{t('visit_web')}<span className='ms-2'><ImArrowRight2 className='expand'/></span></a>
                         </Col>
@@ -106,7 +106,7 @@ function Home() {
                         <Col md className='col-sections'>
                             <h1 className="bold mb-4">Football Hub</h1>
                             <p>{t('football_app_description')}</p>
-                            <a href="https://littletownsagora.fly.dev/" target="_blank" rel="noreferrer" className='nav-link bold section-link p-anchors mt-3' >{t('visit_web')}<span className='ms-2'><ImArrowRight2 className='expand'/></span></a>
+                            <a href="https://acsdfinalproject.web.app/" target="_blank" rel="noreferrer" className='nav-link bold section-link p-anchors mt-3' >{t('visit_web')}<span className='ms-2'><ImArrowRight2 className='expand'/></span></a>
                         </Col>
                     </Row>
                 </Container>
@@ -117,9 +117,9 @@ function Home() {
                 <Container>
                     <Row className="row-sections d-flex align-items-center">
                         <Col md>
-                            <h1 className="bold mb-4">Watson's Detective Agency</h1>
-                            <p>{t('watson\'s_description')}</p>
-                            <a href="https://littletownsagora.fly.dev/" target="_blank" rel="noreferrer" className='nav-link bold section-link p-anchors mt-3' >{t('visit_web')}<span className='ms-2 '><ImArrowRight2 className='expand'/></span></a>
+                            <h1 className="bold mb-4">{t('watsons_title')}</h1>
+                            <p>{t('watsons_description')}</p>
+                            <a href="https://laszloscheers.github.io/Watson-s/index.html" target="_blank" rel="noreferrer" className='nav-link bold section-link p-anchors mt-3' >{t('visit_web')}<span className='ms-2 '><ImArrowRight2 className='expand'/></span></a>
                         </Col>
                         <Col md className="d-flex justify-content-start">
                             <Image src="./assets/images/littletown.png" alt="Example of Litletown's web page" className="sections-img" ></Image>

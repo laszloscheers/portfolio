@@ -34,6 +34,10 @@ function Footer() {
 
   window.addEventListener('scroll', changeVisivility)
 
+  // Handles back-to-top arrow visiblity for small screens
+
+  const mediaQuery = window.matchMedia('(max-width: 991px)');
+
   return (
     <footer className='text-center text-lg-start text-muted'>
 
@@ -80,7 +84,7 @@ function Footer() {
         </Container>
 
         {/* Back-to-top arrow */}
-        <div id='back_to_top_cont' onClick={() => scroll.scrollToTop()}><TbCircleArrowUpFilled className={arrowUp ? 'back_to_top' : 'arrow-up-hidden'}/></div>
+        <div id='back_to_top_cont' onClick={() => scroll.scrollToTop()}><TbCircleArrowUpFilled className={arrowUp && !mediaQuery.matches ? 'back_to_top' : 'arrow-up-hidden'}/></div>
       </section>
 
       {/* Copyright section */}

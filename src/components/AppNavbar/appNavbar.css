@@ -34,3 +34,11 @@
     font-size: larger;
     border: none;
 }
+
+.laguages-display{
+    display: none;
+}
+
+.offcanvas-style{
+    background-color: #ffffff !important;
+}
