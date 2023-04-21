@@ -19,6 +19,9 @@ function Home() {
     const handleShow = () => setShow(true);
     const copyToClipboard = () => navigator.clipboard.writeText('laszloscheers@gmail.com');
 
+    // Handles offcanvas inner text visiblity for small screens
+    const mediaQuery = window.matchMedia('(max-width: 768px)');
+    
     return (
         <div>
             {/*Hero Section*/}
@@ -58,7 +61,7 @@ function Home() {
                             </p>
                         </Col>
                         <Col md className="d-flex justify-content-center">
-                            <Image src="./assets/images/me.jpg" alt="Drawing of Laszlo Scheers" className="hero-img"></Image>
+                            <Image src="./assets/images/me.jpg" alt="Drawing of Laszlo Scheers" className="hero-img" fluid></Image>
                         </Col>
                     </Row>
                 </Container>
@@ -68,14 +71,15 @@ function Home() {
             <section className="section-first" id="littletowns-agora">
                 <Container>
                     <Row className="row-sections d-flex align-items-center">
-                        <Col md className="d-flex justify-content-start">
-                            <Image src="./assets/images/littletown.png" alt="Example of Litletown's web page" className="sections-img" ></Image>
+                        <Col md className={ mediaQuery.matches ? 'd-flex justify-content-start last' : 'd-flex justify-content-start' }>
+                            <Image src="./assets/images/littletown.png" alt="Example of Litletown's web page" className="sections-img" fluid ></Image>
                         </Col>
-                        <Col md className='col-sections'>
+                        <Col md className={ mediaQuery.matches ? 'col-sections first' : 'col-sections' }>
                             <h1 className="bold mb-4">Littletown's Agora</h1>
                             <p>{t('little_town_description')}</p>
                             <a href="https://littletownsagora.fly.dev/" target="_blank" rel="noreferrer" className='nav-link bold section-link p-anchors mt-3' >{t('visit_web')}<span className='ms-2'><ImArrowRight2 className='expand'/></span></a>
                         </Col>
+
                     </Row>
                 </Container>
             </section>
@@ -90,7 +94,7 @@ function Home() {
                             <a href="https://festrip.fly.dev/" target="_blank" rel="noreferrer" className='nav-link bold section-link p-anchors mt-3' >{t('visit_web')}<span className='ms-2'><ImArrowRight2 className='expand'/></span></a>
                         </Col>
                         <Col md className="d-flex justify-content-start">
-                            <Image src="./assets/images/littletown.png" alt="Example of Litletown's web page" className="sections-img" ></Image>
+                            <Image src="./assets/images/littletown.png" alt="Example of Litletown's web page" className="sections-img" fluid ></Image>
                         </Col>
                     </Row>
                 </Container>
@@ -101,9 +105,9 @@ function Home() {
                 <Container>
                     <Row className="row-sections d-flex align-items-center">
                         <Col md className="d-flex justify-content-start">
-                            <Image src="./assets/images/littletown.png" alt="Example of Litletown's web page" className="sections-img" ></Image>
+                            <Image src="./assets/images/littletown.png" alt="Example of Litletown's web page" className="sections-img" fluid ></Image>
                         </Col>
-                        <Col md className='col-sections'>
+                        <Col md >
                             <h1 className="bold mb-4">Football Hub</h1>
                             <p>{t('football_app_description')}</p>
                             <a href="https://acsdfinalproject.web.app/" target="_blank" rel="noreferrer" className='nav-link bold section-link p-anchors mt-3' >{t('visit_web')}<span className='ms-2'><ImArrowRight2 className='expand'/></span></a>
@@ -122,7 +126,7 @@ function Home() {
                             <a href="https://laszloscheers.github.io/Watson-s/index.html" target="_blank" rel="noreferrer" className='nav-link bold section-link p-anchors mt-3' >{t('visit_web')}<span className='ms-2 '><ImArrowRight2 className='expand'/></span></a>
                         </Col>
                         <Col md className="d-flex justify-content-start">
-                            <Image src="./assets/images/littletown.png" alt="Example of Litletown's web page" className="sections-img" ></Image>
+                            <Image src="./assets/images/littletown.png" alt="Example of Litletown's web page" className="sections-img" fluid ></Image>
                         </Col>
                     </Row>
                 </Container>

@@ -42,7 +42,7 @@
 /* All anchors in Home style */
 .p-anchors {
     display: inline;
-    color: #008cf4;
+    color: #008cf4 !important;
 }
 
 /* Sections style and layout */
@@ -60,7 +60,7 @@
 
 .hello-link{
     display: inline;
-    color: #008cf4;
+    color: #008cf4 !important;
     background-color: #f8f8f8;
     border: none;
 }
@@ -70,5 +70,13 @@
 }
 
 .col-sections{
-    margin-left: 8%;
+    padding-left: 8%;
+}
+
+.first{
+    order: 1;
+}
+
+.last{
+    order: 2;
 }

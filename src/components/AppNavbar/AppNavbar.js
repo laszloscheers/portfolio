@@ -58,33 +58,35 @@ const AppNavbar = () => {
     const copyToClipboard = () => navigator.clipboard.writeText('laszloscheers@gmail.com');
     
     // Handles offcanvas inner text visiblity for small screens
-    const mediaQuery = window.matchMedia('(max-width: 991px)');
+    const mediaQuery = window.matchMedia('(max-width: 576px)');
 
     return (
-        <Navbar expand="lg" bg="light" sticky="top" className={navbar ? 'scroll' : 'top'}>
+        <Navbar expand="sm" bg="light" sticky="top" className={navbar ? 'scroll' : 'top'}>
           <Container>
 
             <Navbar.Brand>
                 <button onClick={() => scroll.scrollToTop()} className={navbar ? 'brand scroll bold app-link' : 'brand top bold app-link'} >LSZ</button>
             </Navbar.Brand>
 
-            <Navbar.Toggle aria-controls='offcanvasNavbar-expand-md' />
+            <Navbar.Toggle aria-controls='offcanvasNavbar-expand-sm' />
             <Navbar.Offcanvas
-              id='offcanvasNavbar-expand-md'
-              aria-labelledby='offcanvasNavbarLabel-expand-md'
+              id='offcanvasNavbar-expand-sm'
+              aria-labelledby='offcanvasNavbarLabel-expand-sm'
               placement="end"
             >
-              <Offcanvas.Header closeButton>
-                <Offcanvas.Title id='offcanvasNavbarLabel-expand-md'>
-                  <button onClick={() => scroll.scrollToTop()} className={navbar ? `brand  bold app-link ${ mediaQuery.matches ? 'offcanvas-style' : 'scroll' }` : `brand bold app-link ${ mediaQuery.matches ? 'offcanvas-style' : 'top' }`} >LSZ</button>
+              <Offcanvas.Header closeButton >
+                <Offcanvas.Title id='offcanvasNavbarLabel-expand-sm'>
+                  <button onClick={() => scroll.scrollToTop()} className='brand  bold app-link offcanvas-style mt-1' >LSZ</button>
                 </Offcanvas.Title>
               </Offcanvas.Header>
               <Offcanvas.Body>
                 <Nav className="justify-content-end flex-grow-1 pe-3">
 
-                    {/* Email Modal */}
-                    <Button onClick={handleShow} className={navbar ? `nav-link nav-bar-link app-nav-link d-flex justify-content-end ${ mediaQuery.matches ? 'align-items-center offcanvas-style' : 'align-items-end scroll' }` : `nav-link nav-bar-link app-nav-link d-flex justify-content-end ${ mediaQuery.matches ? 'align-items-center offcanvas-style' : 'align-items-end top' }`}>
-                        { mediaQuery.matches ? `${t('email_mobile')}` : '' }&nbsp;<HiOutlineMail />
+                    {/* Links on offcanvas menu for small screens */}
+                    <Nav.Link className={ mediaQuery.matches ? 'nav-bar-link offcanvas-titles mt-4' : 'offcanvas-hidden' } >Links</Nav.Link>
+
+                    {/* Email Modal */} {/* Classes changes depending on scroll on desktops(navbar) or for offcanvas menu on small screens (mediaQuerry). */}
+                    <Button onClick={handleShow} className={navbar ? `nav-link nav-bar-link app-nav-link d-flex justify-content-start ${ mediaQuery.matches ? 'align-items-center offcanvas-style offcanvas-size offcanvas-links' : 'align-items-end scroll' }` : `nav-link nav-bar-link app-nav-link d-flex justify-content-start ${ mediaQuery.matches ? 'align-items-center offcanvas-style offcanvas-size offcanvas-links' : 'align-items-end top' }`}> { mediaQuery.matches ? `${t('my')} ${t('email_mobile')}` : '' } &nbsp;<HiOutlineMail className={ mediaQuery.matches ? 'offcanvas-hidden' : '' }/>
                     </Button>
 
                     <Modal show={show} onHide={handleClose} centered size="lg">
@@ -100,18 +102,19 @@ const AppNavbar = () => {
                     </Modal>
 
                     {/* GitHub link */}
-                    <Nav.Link href="https://www.github.com/laszloscheers" target="_blank" rel="noreferrer" className='nav-bar-link app-nav-link text-end'>{ mediaQuery.matches ? 'GitHub ' : '' }<FaGithub /></Nav.Link>
+                    <Nav.Link href="https://www.github.com/laszloscheers" target="_blank" rel="noreferrer" className={ mediaQuery.matches ? 'nav-bar-link app-nav-link offcanvas-size offcanvas-links' : 'nav-bar-link app-nav-link' } >{ mediaQuery.matches ? `${t('my')} GitHub` : '' }<FaGithub className={ mediaQuery.matches ? 'offcanvas-hidden' : '' }/></Nav.Link>
 
                     {/* LinkedIn link */}
-                    <Nav.Link href={t('linked_in_link')} target="_blank" rel="noreferrer" className={ mediaQuery.matches ? 'nav-bar-link app-nav-link text-end' : 'nav-bar-link app-nav-link me-4 text-end' } >{ mediaQuery.matches ? 'LinkedIn ' : '' }<FaLinkedin /></Nav.Link>
+                    <Nav.Link href={t('linked_in_link')} target="_blank" rel="noreferrer" className={ mediaQuery.matches ? 'nav-bar-link app-nav-link offcanvas-size offcanvas-links' : 'nav-bar-link app-nav-link me-4 text-end' } >{ mediaQuery.matches ? `${t('my')} LinkedIn` : '' }<FaLinkedin className={ mediaQuery.matches ? 'offcanvas-hidden' : '' }/></Nav.Link>
 
-                    <Nav.Link className={ mediaQuery.matches ? 'nav-bar-link app-nav-link text-end mt-3' : 'laguages-display' } >{t('languages')}</Nav.Link>
+                    {/* Language title on offcanvas menu */}
+                    <Nav.Link className={ mediaQuery.matches ? 'nav-bar-link offcanvas-titles mt-5' : 'offcanvas-hidden' } >{t('languages')}</Nav.Link>
 
                     {/* Language options */}
-                    <div className='d-flex flex-row justify-content-end'>
+                    <div className='d-flex flex-row justify-content-start'>
                     {languages.map(({ code, country_code, name}) => (
                         <div className='d-flex align-items-center' key={country_code}>
-                            <button className={navbar ? `nav-link languages nav-bar-link ${ mediaQuery.matches ? 'offcanvas-style' : 'scroll' }` : `nav-link languages nav-bar-link ${ mediaQuery.matches ? 'offcanvas-style' : 'top' }`} key={country_code} onClick={() => i18next.changeLanguage(code)} disabled={ code === currentLanguageCode} ><span style ={{ opacity: code === currentLanguageCode ? 0.5 : 1 }} >{name}</span></button>
+                            <button className={navbar ? `nav-link nav-bar-link ${ mediaQuery.matches ? 'offcanvas-style offcanvas-size offcanvas-links' : 'scroll' }` : `nav-link nav-bar-link ${ mediaQuery.matches ? 'offcanvas-style offcanvas-size offcanvas-links' : 'top' }`} key={country_code} onClick={() => i18next.changeLanguage(code)} disabled={ code === currentLanguageCode} ><span style ={{ opacity: code === currentLanguageCode ? 0.5 : 1 }} >{name}</span></button>
                             &nbsp;
                             {code === 'en' ? '/' : ''}
                             &nbsp;

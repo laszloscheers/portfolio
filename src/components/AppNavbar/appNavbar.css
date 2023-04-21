@@ -35,10 +35,26 @@
     border: none;
 }
 
-.laguages-display{
+.offcanvas-hidden{
     display: none;
 }
 
 .offcanvas-style{
     background-color: #ffffff !important;
+}
+.offcanvas-size{
+    font-size:x-large;
+}
+
+.offcanvas-links{
+    color: #008cf4 !important;
+}
+
+.offcanvas-titles{
+    cursor:default;
+    color: rgba(0, 0, 0, 0.65) !important;
+    font-size:xx-large;
+}
+.languages:hover{
+    color: rgba(0, 0, 0, 0.65) !important;
 }
