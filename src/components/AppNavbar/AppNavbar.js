@@ -4,9 +4,8 @@ import i18next from 'i18next';
 import { useTranslation } from "react-i18next";
 import { animateScroll as scroll } from 'react-scroll';
 import { Container, Nav, Navbar, Button, Modal, Offcanvas} from 'react-bootstrap';
-import { HiOutlineMail } from 'react-icons/hi';
-import { FaGithub, FaLinkedin } from 'react-icons/fa';
-import { RxCopy } from 'react-icons/rx';
+import { MdEmail } from 'react-icons/md';
+import { FaGithub, FaLinkedin, FaCopy } from 'react-icons/fa';
 
 import "./appNavbar.css";
 
@@ -65,7 +64,7 @@ const AppNavbar = () => {
           <Container>
 
             <Navbar.Brand>
-                <button onClick={() => scroll.scrollToTop()} className={navbar ? 'brand scroll bold app-link' : 'brand top bold app-link'} >LSZ</button>
+                <button onClick={() => scroll.scrollToTop()} className={navbar ? 'brand scroll bold' : 'brand top bold'} >LSZ</button>
             </Navbar.Brand>
 
             <Navbar.Toggle aria-controls='offcanvasNavbar-expand-sm' />
@@ -76,17 +75,17 @@ const AppNavbar = () => {
             >
               <Offcanvas.Header closeButton >
                 <Offcanvas.Title id='offcanvasNavbarLabel-expand-sm'>
-                  <button onClick={() => scroll.scrollToTop()} className='brand  bold app-link offcanvas-style mt-1' >LSZ</button>
+                  <button onClick={() => scroll.scrollToTop()} className='brand bold offcanvas-style mt-1' >LSZ</button>
                 </Offcanvas.Title>
               </Offcanvas.Header>
               <Offcanvas.Body>
                 <Nav className="justify-content-end flex-grow-1 pe-3">
 
                     {/* Links on offcanvas menu for small screens */}
-                    <Nav.Link className={ mediaQuery.matches ? 'nav-bar-link offcanvas-titles mt-4' : 'offcanvas-hidden' } >Links</Nav.Link>
+                    <Nav.Link className={ mediaQuery.matches ? 'nav-bar-link offcanvas-titles mt-1' : 'offcanvas-hidden' } >Links</Nav.Link>
 
                     {/* Email Modal */} {/* Classes changes depending on scroll on desktops(navbar) or for offcanvas menu on small screens (mediaQuerry). */}
-                    <Button onClick={handleShow} className={navbar ? `nav-link nav-bar-link app-nav-link d-flex justify-content-start ${ mediaQuery.matches ? 'align-items-center offcanvas-style offcanvas-size offcanvas-links' : 'align-items-end scroll' }` : `nav-link nav-bar-link app-nav-link d-flex justify-content-start ${ mediaQuery.matches ? 'align-items-center offcanvas-style offcanvas-size offcanvas-links' : 'align-items-end top' }`}> { mediaQuery.matches ? `${t('my')} ${t('email_mobile')}` : '' } &nbsp;<HiOutlineMail className={ mediaQuery.matches ? 'offcanvas-hidden' : '' }/>
+                    <Button onClick={handleShow} className={navbar ? `nav-link nav-bar-link app-nav-link d-flex justify-content-start ${ mediaQuery.matches ? 'align-items-center offcanvas-style offcanvas-size offcanvas-links' : 'align-items-end scroll' }` : `nav-link nav-bar-link app-nav-link d-flex justify-content-start ${ mediaQuery.matches ? 'align-items-center offcanvas-style offcanvas-size offcanvas-links' : 'align-items-end top' }`}> { mediaQuery.matches ? `${t('my')} ${t('email_mobile')}` : '' }<MdEmail className={ mediaQuery.matches ? 'offcanvas-hidden' : '' }/>
                     </Button>
 
                     <Modal show={show} onHide={handleClose} centered size="lg">
@@ -94,9 +93,9 @@ const AppNavbar = () => {
                         </Modal.Header>
                         <Modal.Body id='modal-p'>
                             <div className='d-flex justify-content-center align-items-center'>
-                                <button onClick={event => {handleClose();copyToClipboard();}} className='btn-clip d-flex align-items-center'><RxCopy className='me-3'/><span>Copy email to clipboard</span></button>
+                                <button onClick={event => {handleClose();copyToClipboard();}} className='btn-clip d-flex align-items-center'><FaCopy className='me-3'/><span>Copy email to clipboard</span></button>
                                 <p className='mb-0 mx-5'>OR</p>
-                                <a href="mailto:laszloscheers@gmail.com" className='btn-clip d-flex align-items-center' onClick={handleClose} ><HiOutlineMail className='me-3'/><span>Send me an email</span></a>
+                                <a href="mailto:laszloscheers@gmail.com" className='btn-clip d-flex align-items-center' onClick={handleClose} ><MdEmail className='me-3'/><span>Send me an email</span></a>
                             </div>
                         </Modal.Body>
                     </Modal>
@@ -108,7 +107,7 @@ const AppNavbar = () => {
                     <Nav.Link href={t('linked_in_link')} target="_blank" rel="noreferrer" className={ mediaQuery.matches ? 'nav-bar-link app-nav-link offcanvas-size offcanvas-links' : 'nav-bar-link app-nav-link me-4 text-end' } >{ mediaQuery.matches ? `${t('my')} LinkedIn` : '' }<FaLinkedin className={ mediaQuery.matches ? 'offcanvas-hidden' : '' }/></Nav.Link>
 
                     {/* Language title on offcanvas menu */}
-                    <Nav.Link className={ mediaQuery.matches ? 'nav-bar-link offcanvas-titles mt-5' : 'offcanvas-hidden' } >{t('languages')}</Nav.Link>
+                    <Nav.Link className={ mediaQuery.matches ? 'nav-bar-link offcanvas-titles mt-3' : 'offcanvas-hidden' } >{t('languages')}</Nav.Link>
 
                     {/* Language options */}
                     <div className='d-flex flex-row justify-content-start'>

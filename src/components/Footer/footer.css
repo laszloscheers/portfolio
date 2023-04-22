@@ -12,6 +12,12 @@
   background-color: #ffffff;
 }
 
+.footer-nav-link:hover{
+    color: rgba(0, 0, 0, 0.7);
+    transition: none;
+    transform: scale(1.01);
+}
+
 /* Back-to-top arrow*/
 #back_to_top_cont{
   position:fixed;
@@ -40,3 +46,10 @@
   display: none;
   transition: all .7s ease-in-out;
 }
+
+ @media (max-width: 576px){
+  #email-footer{
+    display: flex;
+    justify-content: center;
+  }
+ }

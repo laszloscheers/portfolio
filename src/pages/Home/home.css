@@ -39,12 +39,6 @@
     background-color: #dce8f8;
 }
 
-/* All anchors in Home style */
-.p-anchors {
-    display: inline;
-    color: #008cf4 !important;
-}
-
 /* Sections style and layout */
 .row-sections{
     padding:9% 0% 10% 0%;
@@ -69,7 +63,7 @@
     background-color: #f8f8f8;
 }
 
-.col-sections{
+.col-sections-odd{
     padding-left: 8%;
 }
 
@@ -80,3 +74,39 @@
 .last{
     order: 2;
 }
+
+/* All links*/
+
+.home-link{
+    display: inline;
+    color: #008cf4 !important;
+    transition: none;
+}
+
+.home-link:hover{
+    color: #4064ac !important;
+    transition: none;
+}
+
+.home-link:hover .expand{
+    color: #4064ac;
+    transition: none;
+    transform: scale(1.2);
+}
+
+@media (max-width: 576px) {
+    .hero-col{
+        padding-left:15%;
+        margin-bottom: 5%;
+    }
+    .hero-col h1{
+        padding-right:10%;
+    }
+    .hero-col p{
+        padding-right:13%;
+    }
+    .col-sections{
+        padding-left: 8%;
+    }
+  }
+  

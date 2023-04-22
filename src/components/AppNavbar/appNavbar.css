@@ -6,12 +6,12 @@
 /* Top and scroll styles for navbar*/
 .top{
     background-color: #f8f8f8 !important;
-    transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out !important;
 }
 
 .scroll { 
 	background-color: #dce8f8 !important;
-    transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out !important;
 }
 
 /* Brand*/
@@ -19,7 +19,8 @@
     color: #008cf4;
     text-decoration: none;
     border: none;
-    font-size:xx-large
+    font-size:xx-large;
+    transition: none;
 }
 
 /* Languages*/
@@ -33,6 +34,7 @@
 .nav-bar-link{
     font-size: larger;
     border: none;
+    transition: none;
 }
 
 .offcanvas-hidden{
@@ -53,8 +55,10 @@
 .offcanvas-titles{
     cursor:default;
     color: rgba(0, 0, 0, 0.65) !important;
-    font-size:xx-large;
+    font-size:x-large;
+    font-family: "AdobeCleanBold", "Segoe UI";
 }
+
 .languages:hover{
     color: rgba(0, 0, 0, 0.65) !important;
 }

@@ -2,9 +2,8 @@ import React, { useState } from 'react';
 import { Container, Col, Row, Modal } from 'react-bootstrap';
 import { useTranslation } from "react-i18next";
 import { animateScroll as scroll } from 'react-scroll'
-import { HiOutlineMail } from 'react-icons/hi';
-import { RxCopy } from 'react-icons/rx';
-import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import { MdEmail } from 'react-icons/md';
+import { FaGithub, FaLinkedin, FaCopy } from 'react-icons/fa';
 import { TbCircleArrowUpFilled } from 'react-icons/tb';
 
 
@@ -50,9 +49,9 @@ function Footer() {
               <h6 className='text-uppercase bold mb-3'>{t('footer_contact')}</h6>
 
               {/* Email Modal */}
-              <p>
-                <button onClick={handleShow} className='nav-link footer-link app-nav-link'>
-                    <HiOutlineMail />&nbsp;laszloscheers@gmail.com
+              <p id='email-footer'>
+                <button onClick={handleShow} className='nav-link footer-link footer-nav-link'>
+                    <MdEmail />&nbsp;laszloscheers@gmail.com
                 </button>
 
                 <Modal show={show} onHide={handleClose} centered size="lg">
@@ -60,9 +59,9 @@ function Footer() {
                     </Modal.Header>
                     <Modal.Body id='modal-p'>
                         <div className='d-flex justify-content-center align-items-center'>
-                            <button onClick={event => {handleClose();copyToClipboard();}} className=' btn-clip d-flex align-items-center'><RxCopy className='me-3'/><span>Copy email to clipboard</span></button>
+                            <button onClick={event => {handleClose();copyToClipboard();}} className=' btn-clip d-flex align-items-center'><FaCopy className='me-3'/><span>Copy email to clipboard</span></button>
                             <p className='mb-0 mx-5'>OR</p>
-                            <a href="mailto:laszloscheers@gmail.com" className='nav-link btn-clip d-flex align-items-center' onClick={handleClose} ><HiOutlineMail className='me-3'/><span>Send me an email</span></a>
+                            <a href="mailto:laszloscheers@gmail.com" className='nav-link btn-clip d-flex align-items-center' onClick={handleClose} ><MdEmail className='me-3'/><span>Send me an email</span></a>
 
                         </div>
                     </Modal.Body>
@@ -71,12 +70,12 @@ function Footer() {
 
               {/* GitHub link */}
               <p>
-                <a href="https://www.github.com/laszloscheers" target="_blank" rel="noreferrer" className='nav-link app-nav-link' ><FaGithub className='navbarToggleIcon2' />&nbsp;github.com/laszloscheers</a>
+                <a href="https://www.github.com/laszloscheers" target="_blank" rel="noreferrer" className='nav-link footer-nav-link' ><FaGithub className='navbarToggleIcon2' />&nbsp;github.com/laszloscheers</a>
               </p>
 
               {/* LinkedIn link */}
               <p>
-                <a href={t('linked_in_link')} target="_blank" rel="noreferrer" className='nav-link app-nav-link' ><FaLinkedin className='navbarToggleIcon2' />&nbsp;{t('linked_in')}</a>
+                <a href={t('linked_in_link')} target="_blank" rel="noreferrer" className='nav-link footer-nav-link' ><FaLinkedin className='navbarToggleIcon2' />&nbsp;{t('linked_in')}</a>
               </p>
             </Col>
 
@@ -90,7 +89,7 @@ function Footer() {
       {/* Copyright section */}
       <div className='text-center p-4 d-flex justify-content-center' style={{ backgroundColor: 'rgba(0, 0, 0, 0.05)' }}>
         © 2021 Copyright &nbsp;
-        <a className='text-reset bold nav-link app-nav-link' href={t('linked_in_link')} target="_blank" rel="noreferrer" >
+        <a className='text-reset bold nav-link footer-nav-link' href={t('linked_in_link')} target="_blank" rel="noreferrer" >
           Laszlo Scheers
         </a>
       </div>

@@ -75,31 +75,3 @@ body{
 .btn-clip:hover span{
     color: rgba(0, 0, 0, 0.55) !important;
 }
-
-/* General links style and layout*/
-.app-link:hover{
-    color: #4064ac;
-    transition: none;
-}
-
-.app-nav-link:hover{
-    color: rgba(0, 0, 0, 0.7);
-    transition: none;
-    transform: scale(1.01);
-}
-
-.section-link:hover{
-    color: #4064ac;
-    transition: none;
-}
-
-.section-link:hover .expand{
-    color: #4064ac;
-    transition: none;
-    transform: scale(1.2);
-}
-
-.top{
-    transition: none;
-}
-
