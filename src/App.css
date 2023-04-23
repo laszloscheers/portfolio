@@ -5,29 +5,29 @@ html{
 
 /* Fonts*/
 @font-face {
-    font-family: "AdobeCleanRegular";
-    src: local("AdobeCleanRegular"),
-     url("../public/assets/fonts/AdobeCleanRegular.ttf") format("truetype");
+    font-family: "Inter-Regular";
+    src: local("Inter-Regular"),
+     url("../public/assets/fonts/Inter-Regular.ttf") format("truetype");
     font-weight:normal;
 }
 @font-face {
-    font-family: "AdobeCleanBold";
-    src: local("AdobeCleanBold"),
-     url("../public/assets/fonts/AdobeCleanBold.ttf") format("truetype");
+    font-family: "Inter-Bold";
+    src: local("Inter-Bold"),
+     url("../public/assets/fonts/Inter-Bold.ttf") format("truetype");
     font-weight:bold;
 }
 
 body{
-    font-family: "AdobeCleanRegular","Segoe UI";
+    font-family: "Inter-Regular","Segoe UI";
 }
 
 .bold{
-    font-family: "AdobeCleanBold","Segoe UI";
+    font-family: "Inter-Bold","Segoe UI";
 }
 
 /* Modals for email*/
 .modal{
-    font-family: "AdobeCleanBold", "Segoe UI";
+    font-family: "Iter-Bold", "Segoe UI";
     font-size:larger;
     color: #008cf4;
 }

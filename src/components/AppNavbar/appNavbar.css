@@ -2,10 +2,12 @@
 .navbar{
     height:70px;
 }
-
+.nav-margin{
+    margin: 0% 21.5% 0% 21.5%;
+}
 /* Top and scroll styles for navbar*/
 .top{
-    background-color: #f8f8f8 !important;
+    background-color: #ffffff !important;
     transition: all .5s ease-in-out !important;
 }
 
@@ -23,6 +25,10 @@
     transition: none;
 }
 
+.logo{
+    max-width: 70px;
+}
+
 /* Languages*/
 .languages{
     border: none;
@@ -35,8 +41,17 @@
     font-size: larger;
     border: none;
     transition: none;
+    color: rgba(0, 0, 0, 0.55);
 }
 
+.nav-bar-link:hover{
+    color: #008cf4;
+    transition: none !important;
+}
+
+.nav-email{
+    margin-bottom: 3px;
+}
 .offcanvas-hidden{
     display: none;
 }
@@ -56,7 +71,7 @@
     cursor:default;
     color: rgba(0, 0, 0, 0.65) !important;
     font-size:x-large;
-    font-family: "AdobeCleanBold", "Segoe UI";
+    font-family: "Inter-Bold", "Segoe UI";
 }
 
 .languages:hover{

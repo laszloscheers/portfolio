@@ -3,7 +3,7 @@ import cookie from 'js-cookie';
 import i18next from 'i18next';
 import { useTranslation } from "react-i18next";
 import { animateScroll as scroll } from 'react-scroll';
-import { Container, Nav, Navbar, Button, Modal, Offcanvas} from 'react-bootstrap';
+import { Container, Nav, Navbar, Button, Modal, Offcanvas, Image} from 'react-bootstrap';
 import { MdEmail } from 'react-icons/md';
 import { FaGithub, FaLinkedin, FaCopy } from 'react-icons/fa';
 
@@ -18,12 +18,12 @@ const AppNavbar = () => {
     const languages = [
         {
             code: 'en',
-            name: 'En',
+            name: 'EN',
             country_code: 'gb'
         },
         {
             code: 'es',
-            name: 'Es',
+            name: 'ES',
             country_code: 'es'
         }
     ];
@@ -61,10 +61,12 @@ const AppNavbar = () => {
 
     return (
         <Navbar expand="sm" bg="light" sticky="top" className={navbar ? 'scroll' : 'top'}>
-          <Container>
+          <Container fluid className='nav-margin'>
 
             <Navbar.Brand>
-                <button onClick={() => scroll.scrollToTop()} className={navbar ? 'brand scroll bold' : 'brand top bold'} >LSZ</button>
+                <button onClick={() => scroll.scrollToTop()} className={navbar ? 'brand scroll bold' : 'brand top bold'} >
+                  <Image src="./assets/images/logo.png" alt="Drawing of Laszlo Scheers" className="logo" fluid></Image>
+                </button>
             </Navbar.Brand>
 
             <Navbar.Toggle aria-controls='offcanvasNavbar-expand-sm' />
@@ -85,7 +87,7 @@ const AppNavbar = () => {
                     <Nav.Link className={ mediaQuery.matches ? 'nav-bar-link offcanvas-titles mt-1' : 'offcanvas-hidden' } >Links</Nav.Link>
 
                     {/* Email Modal */} {/* Classes changes depending on scroll on desktops(navbar) or for offcanvas menu on small screens (mediaQuerry). */}
-                    <Button onClick={handleShow} className={navbar ? `nav-link nav-bar-link app-nav-link d-flex justify-content-start ${ mediaQuery.matches ? 'align-items-center offcanvas-style offcanvas-size offcanvas-links' : 'align-items-end scroll' }` : `nav-link nav-bar-link app-nav-link d-flex justify-content-start ${ mediaQuery.matches ? 'align-items-center offcanvas-style offcanvas-size offcanvas-links' : 'align-items-end top' }`}> { mediaQuery.matches ? `${t('my')} ${t('email_mobile')}` : '' }<MdEmail className={ mediaQuery.matches ? 'offcanvas-hidden' : '' }/>
+                    <Button onClick={handleShow} className={navbar ? `nav-link nav-bar-link app-nav-link d-flex justify-content-start ${ mediaQuery.matches ? 'align-items-center offcanvas-style offcanvas-size offcanvas-links' : 'align-items-end scroll' }` : `nav-link nav-bar-link app-nav-link d-flex justify-content-start ${ mediaQuery.matches ? 'align-items-center offcanvas-style offcanvas-size offcanvas-links' : 'align-items-end top' }`}> { mediaQuery.matches ? `${t('my')} ${t('email_mobile')}` : '' }<MdEmail className={ mediaQuery.matches ? 'offcanvas-hidden' : 'nav-email' }/>
                     </Button>
 
                     <Modal show={show} onHide={handleClose} centered size="lg">
@@ -113,7 +115,7 @@ const AppNavbar = () => {
                     <div className='d-flex flex-row justify-content-start'>
                     {languages.map(({ code, country_code, name}) => (
                         <div className='d-flex align-items-center' key={country_code}>
-                            <button className={navbar ? `nav-link nav-bar-link ${ mediaQuery.matches ? 'offcanvas-style offcanvas-size offcanvas-links' : 'scroll' }` : `nav-link nav-bar-link ${ mediaQuery.matches ? 'offcanvas-style offcanvas-size offcanvas-links' : 'top' }`} key={country_code} onClick={() => i18next.changeLanguage(code)} disabled={ code === currentLanguageCode} ><span style ={{ opacity: code === currentLanguageCode ? 0.5 : 1 }} >{name}</span></button>
+                            <button className={navbar ? `nav-link nav-bar-link ${ mediaQuery.matches ? 'offcanvas-style offcanvas-size offcanvas-links' : 'scroll' }` : `nav-link nav-bar-link ${ mediaQuery.matches ? 'offcanvas-style offcanvas-size offcanvas-links' : 'top' }`} key={country_code} onClick={() => i18next.changeLanguage(code)} disabled={ code === currentLanguageCode} ><span className={code === currentLanguageCode ? 'offcanvas-links' : '' } >{name}</span></button>
                             &nbsp;
                             {code === 'en' ? '/' : ''}
                             &nbsp;
