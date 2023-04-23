@@ -1,6 +1,9 @@
+/* Scroll behaviour to land at section considering the sticky navbar*/
 html{
     scroll-padding-top: 70px;
 }
+
+/* Fonts*/
 @font-face {
     font-family: "AdobeCleanRegular";
     src: local("AdobeCleanRegular"),
@@ -22,10 +25,27 @@ body{
     font-family: "AdobeCleanBold","Segoe UI";
 }
 
+/* Modals for email*/
 .modal{
     font-family: "AdobeCleanBold", "Segoe UI";
     font-size:larger;
     color: #008cf4;
+}
+
+.modal-content{
+    background-color: #f8f8f8;
+}
+
+#modal-p{
+    padding:5% 5% 10% 3%;
+}
+
+#modal-p div p{
+    font-size:x-large
+}
+
+.modal-header{
+    border-bottom: none !important;
 }
 
 .btn-clip{
@@ -53,44 +73,4 @@ body{
 
 .btn-clip:hover span{
     color: rgba(0, 0, 0, 0.55) !important;
-}
-
-#modal-p{
-    padding:5% 5% 10% 3%;
-}
-
-#modal-p div p{
-    font-size:x-large
-}
-.modal-header{
-    border-bottom: none !important;
-}
-
-.app-link:hover{
-    color: #4064ac;
-    transition: none;
-}
-
-.app-nav-link:hover{
-    color: rgba(0, 0, 0, 0.7);
-    transition: none;
-    transform: scale(1.01);
-}
-
-.section-link:hover{
-    color: #4064ac;
-}
-
-.section-link:hover .expand{
-    color: #4064ac;
-   
-    transform: scale(1.2);
-}
-
-.top{
-    transition: none;
-}
-
-.modal-content{
-    background-color: #f8f8f8;
 }

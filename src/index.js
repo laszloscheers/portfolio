@@ -14,6 +14,7 @@ import AppNavbar from './components/AppNavbar/AppNavbar';
 import Footer from './components/Footer/Footer';
 import App from './App';
 
+// Language swapping tool
 i18n
   .use(initReactI18next) // passes i18n down to react-i18next
   .use(LanguageDetector)
@@ -29,7 +30,8 @@ i18n
       loadPath: '/assets/locales/{{lng}}/translation.json',
     }
   });
- 
+
+//Loading Marckup for Suspense component
 const skeletonOption = {
   loop: true,
   autoplay: true, 
@@ -38,13 +40,15 @@ const skeletonOption = {
     preserveAspectRatio: 'xMidYMid slice'
   }
 };
+
 const loadingMarkup = (
   <div>
     <AppNavbar />
-    <Lottie options={skeletonOption} height="30%" width="80%"/>
+      <Lottie options={skeletonOption} width="60%"/>
     <Footer />
   </div>
 )
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <Suspense fallback={loadingMarkup}>

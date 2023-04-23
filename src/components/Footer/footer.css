@@ -1,3 +1,4 @@
+/* General footer style and layout*/
 .footer-col p{
   margin-bottom: 0.7rem;
 }
@@ -11,6 +12,13 @@
   background-color: #ffffff;
 }
 
+.footer-nav-link:hover{
+    color: rgba(0, 0, 0, 0.7);
+    transition: none;
+    transform: scale(1.01);
+}
+
+/* Back-to-top arrow*/
 #back_to_top_cont{
   position:fixed;
   bottom: 10%;
@@ -33,7 +41,15 @@
   transform:scale(1.2)
 }
 
+/* Hides arrow when the window is at the top*/
 .arrow-up-hidden{
   display: none;
   transition: all .7s ease-in-out;
 }
+
+ @media (max-width: 576px){
+  #email-footer{
+    display: flex;
+    justify-content: center;
+  }
+ }
