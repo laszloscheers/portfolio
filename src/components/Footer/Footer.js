@@ -28,20 +28,19 @@ function Footer() {
   const mediaQuery = window.matchMedia('(max-width: 991px)');
 
   return (
-    <footer className='text-center text-lg-start text-muted'>
+    <footer>
 
-      <section className='border-top'>
-        {/* Back-to-top arrow */}
-        <div id='back_to_top_cont' onClick={() => scroll.scrollToTop()}><TbCircleArrowUpFilled className={arrowUp && !mediaQuery.matches ? 'back_to_top' : 'arrow-up-hidden'}/></div>
-      </section>
+      {/* Back-to-top arrow */}
+      <div id='back_to_top_cont' onClick={() => scroll.scrollToTop()}><TbCircleArrowUpFilled className={arrowUp && !mediaQuery.matches ? 'back_to_top' : 'arrow-up-hidden'}/></div>
 
       {/* Copyright section */}
-      <div className='text-center p-4 d-flex justify-content-center' style={{ backgroundColor: 'rgba(0, 0, 0, 0.05)' }}>
+      <div className='text-center p-4 d-flex justify-content-center footer-colour'>
         © 2021 Copyright &nbsp;
         <a className='text-reset bold nav-link footer-nav-link' href={t('linked_in_link')} target="_blank" rel="noreferrer" >
           Laszlo Scheers
         </a>
       </div>
+      
     </footer>
   );
 }

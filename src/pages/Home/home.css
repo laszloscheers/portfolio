@@ -1,6 +1,6 @@
 /* Hero Section */
 .hero{
-    background-color: #ffffff;
+    background-color: #f8f8f8;
 }
 
 .hero-row{
@@ -8,7 +8,7 @@
 }
 
 .hero-col{
-    padding:3% 0% 1% 10%;
+    padding:5% 0% 1% 10.5%;
 }
 
 .hero-col h1{
@@ -23,7 +23,7 @@
 }
 
 .hero-img{
-    max-height: 470px;
+    max-height: 450px;
 }
 
 .hello-link{

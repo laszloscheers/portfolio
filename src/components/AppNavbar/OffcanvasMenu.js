@@ -116,6 +116,28 @@ const AppNavbar = () => {
               </Offcanvas.Body>
             </Navbar.Offcanvas>
           </Container>
+
+
+
+                    {/* Email Modal */} {/* Classes changes depending on scroll on desktops(navbar) or for offcanvas menu on small screens (mediaQuerry). */}
+                    <Button onClick={handleShow} className={navbar ? `nav-link nav-bar-link app-nav-link d-flex justify-content-start ${ mediaQuery.matches ? 'align-items-center offcanvas-style offcanvas-size offcanvas-links' : 'align-items-end scroll' }` : `nav-link nav-bar-link app-nav-link d-flex justify-content-start ${ mediaQuery.matches ? 'align-items-center offcanvas-style offcanvas-size offcanvas-links' : 'align-items-end top' }`}> { mediaQuery.matches ? `${t('my')} ${t('email_mobile')}` : '' }<MdEmail className={ mediaQuery.matches ? 'offcanvas-hidden' : 'nav-email' }/>
+                    </Button>
+
+                    <Modal show={show} onHide={handleClose} centered size="lg">
+                        <Modal.Header closeButton className='d-flex justify-content-center'>
+                        </Modal.Header>
+                        <Modal.Body id='modal-p'>
+                            <div className='d-flex justify-content-center align-items-center'>
+                                <button onClick={event => {handleClose();copyToClipboard();}} className='btn-clip d-flex align-items-center'><FaCopy className='me-3'/><span>Copy email to clipboard</span></button>
+                                <p className='mb-0 mx-5'>OR</p>
+                                <a href="mailto:laszloscheers@gmail.com" className='btn-clip d-flex align-items-center' onClick={handleClose} ><MdEmail className='me-3'/><span>Send me an email</span></a>
+                            </div>
+                        </Modal.Body>
+                    </Modal>
+
+
+
+
         </Navbar>
   );
 }

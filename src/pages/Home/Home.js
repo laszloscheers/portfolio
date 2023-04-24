@@ -1,8 +1,6 @@
-import { useState } from 'react';
 import { useTranslation } from "react-i18next";
-import { Container, Row, Col, Modal, Image } from 'react-bootstrap';
-import { MdEmail } from 'react-icons/md';
-import { FaCopy } from 'react-icons/fa';
+import { Container, Row, Col, Image } from 'react-bootstrap';
+
 import { ImArrowRight2 } from 'react-icons/im';
 
 import "./home.css";
@@ -11,13 +9,6 @@ function Home() {
 
     // Language swapping tool
     const { t } = useTranslation()
-
-    // Handle visivility for email's modal
-    const [show, setShow] = useState(false);
-
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
-    const copyToClipboard = () => navigator.clipboard.writeText('laszloscheers@gmail.com');
 
     // Handles which class to use depending on the size of the screen
     const mediaQuery = window.matchMedia('(max-width: 768px)');
@@ -42,24 +33,6 @@ function Home() {
                                 {t('under_sub_header_1')}
                                 <a href="#littletowns-agora"className='nav-link home-link' >{t('under_sub_header_my_proyects')}</a>
                                 {t('under_sub_header_2')}
-                                <button onClick={handleShow} className='nav-link home-link hello-link'>
-                                    {t('under_sub_header_contact')}
-                                </button>
-
-                                {/* Modal for the email pop-up to copy email to clipboard or just send one*/}
-                                <Modal show={show} onHide={handleClose} centered size="lg">
-                                    <Modal.Header closeButton className='d-flex justify-content-center'>
-                                    </Modal.Header>
-                                    <Modal.Body id='modal-p'>
-                                        <div className='d-flex justify-content-center align-items-center'>
-                                            <button onClick={event => {handleClose();copyToClipboard();}} className=' btn-clip d-flex align-items-center'><FaCopy className='me-3'/><span>Copy email to clipboard</span></button>
-                                            <p className='mb-0 mx-5'>OR</p>
-                                            <a href="mailto:laszloscheers@gmail.com" className='nav-link btn-clip d-flex align-items-center' onClick={handleClose} ><MdEmail className='me-3'/><span>Send me an email</span></a>
-
-                                        </div>
-                                    </Modal.Body>
-                                </Modal>
-                                {t('under_sub_header_3')}
                             </p>
                         </Col>
                         <Col md className="d-flex justify-content-start">
@@ -89,7 +62,7 @@ function Home() {
             </section>
             
             {/*Second Project Section*/}
-            <section className="section-second" id="festrip-tickets">
+            <section className="section-second">
                 <Container>
                     <Row className="row-sections d-flex align-items-center">
                         <Col md className='col-sections'>
@@ -105,7 +78,7 @@ function Home() {
             </section>
 
             {/*Third Project Section*/}
-            <section className="section-third" id="football-hub">
+            <section className="section-third">
                 <Container>
                     <Row className="row-sections d-flex align-items-center">
                         <Col md className={ mediaQuery.matches ? 'd-flex justify-content-start last' : 'd-flex justify-content-start' }>
@@ -121,7 +94,7 @@ function Home() {
             </section>
 
             {/*Fourth Project Section*/}
-            <section className="section-second" id="watsons">
+            <section className="section-first">
                 <Container>
                     <Row className="row-sections d-flex align-items-center">
                         <Col md className='col-sections'>

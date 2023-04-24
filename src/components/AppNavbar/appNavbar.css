@@ -2,31 +2,27 @@
 .navbar{
     height:70px;
 }
-.nav-margin{
-    margin: 0% 21.5% 0% 21.5%;
+.nav-padding{
+    padding-left: 7%;
 }
 /* Top and scroll styles for navbar*/
 .top{
-    background-color: #ffffff !important;
+    background-color: #f8f8f8 !important;
     transition: all .5s ease-in-out !important;
 }
 
 .scroll { 
 	background-color: #dce8f8 !important;
-    transition: all .5s ease-in-out !important;
+    transition: all .5s ease-in-out;
 }
 
 /* Brand*/
 .brand{
-    color: #008cf4;
-    text-decoration: none;
     border: none;
-    font-size:xx-large;
-    transition: none;
 }
 
 .logo{
-    max-width: 70px;
+    max-width: 65px;
 }
 
 /* Languages*/
@@ -41,17 +37,56 @@
     font-size: larger;
     border: none;
     transition: none;
-    color: rgba(0, 0, 0, 0.55);
+    color: rgba(0, 0, 0, 0.55) !important;
 }
 
 .nav-bar-link:hover{
-    color: #008cf4;
+    color: #008cf4 !important;
     transition: none !important;
 }
 
 .nav-email{
     margin-bottom: 3px;
 }
+
+/* Dropdown menu for email*/
+.dropdown-item{
+    padding: 0;
+}
+
+.dropdown-menu{
+    padding: 23% 25% 23% 25%;
+}
+
+.dropdown-button{
+    background-color: #ffffff;
+    color: rgba(0, 0, 0, 0.55);
+    border: none;
+    padding: 0;
+}
+
+.dropdown-button:hover{
+    color: #008cf4;
+}
+
+.drop-item{
+    color: rgba(0, 0, 0, 0.55);
+}
+
+.drop-item span{
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.drop-item span:hover{
+    color: #008cf4;
+}
+
+.drop-item:hover{
+    background-color: #ffffff;
+    color: #008cf4;
+}
+
+/* Offcanvas links*/
 .offcanvas-hidden{
     display: none;
 }
@@ -72,8 +107,4 @@
     color: rgba(0, 0, 0, 0.65) !important;
     font-size:x-large;
     font-family: "Inter-Bold", "Segoe UI";
-}
-
-.languages:hover{
-    color: rgba(0, 0, 0, 0.65) !important;
 }

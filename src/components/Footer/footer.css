@@ -1,20 +1,17 @@
 /* General footer style and layout*/
+.footer-colour{
+  background-color: #f8f8f8;
+  color: rgba(0, 0, 0, 0.55) !important;
+}
 .footer-col p{
   margin-bottom: 0.7rem;
 }
-
-.footer-link{
-  background-color: #ffffff;
-  border: none;
+.footer-nav-link{
+  transition: none !important;
 }
-
-.footer-link:hover{
-  background-color: #ffffff;
-}
-
 .footer-nav-link:hover{
-    color: rgba(0, 0, 0, 0.7);
-    transition: none;
+    color: rgba(0, 0, 0, 0.7) !important;
+    transition: none !important;
     transform: scale(1.01);
 }
 
@@ -46,10 +43,3 @@
   display: none;
   transition: all .7s ease-in-out;
 }
-
- @media (max-width: 576px){
-  #email-footer{
-    display: flex;
-    justify-content: center;
-  }
- }
