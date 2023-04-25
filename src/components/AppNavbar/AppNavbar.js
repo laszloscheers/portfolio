@@ -40,7 +40,7 @@ const AppNavbar = () => {
     const [navbar, setNavbar] = useState(false);
 
     const changeNavColour = () => {
-        if (window.scrollY >= 70){
+        if (window.scrollY >= 65){
             setNavbar(true)
         } else{
             setNavbar(false)
@@ -50,7 +50,18 @@ const AppNavbar = () => {
     window.addEventListener('scroll', changeNavColour)
     
     // Handles offcanvas inner text visiblity for small screens
-    const mediaQuery = window.matchMedia('(max-width: 576px)');
+    const [mediaQuery, setMediaQuery] = useState(false);
+
+    useEffect(() => {
+      window.matchMedia("(max-width: 576px)").addEventListener("change", e => {
+        const mediaMatches = e.matches;
+        if (mediaMatches){
+          setMediaQuery(true)
+        } else{
+          setMediaQuery(false)
+        }
+      });
+    });
 
     return (
         <Navbar expand="sm" bg="light" sticky="top" className={navbar ? 'scroll' : 'top'}>
@@ -70,42 +81,42 @@ const AppNavbar = () => {
             >
               <Offcanvas.Header closeButton >
                 <Offcanvas.Title id='offcanvasNavbarLabel-expand-sm'>
-                  <button onClick={() => scroll.scrollToTop()} className='brand bold offcanvas-style mt-1' >LSZ</button>
+                  <button onClick={() => scroll.scrollToTop()} className='offcanvas-logo bold offcanvas-style mt-1' >LSZ</button>
                 </Offcanvas.Title>
               </Offcanvas.Header>
               <Offcanvas.Body>
                 <Nav className="justify-content-end flex-grow-1 pe-3">
 
                     {/* Links on offcanvas menu for small screens */}
-                    <Nav.Link className={ mediaQuery.matches ? 'nav-bar-link offcanvas-titles mt-1' : 'offcanvas-hidden' } >Links</Nav.Link>
+                    <Nav.Link className={ mediaQuery ? 'nav-bar-link offcanvas-titles' : 'offcanvas-hidden' } >Links</Nav.Link>
 
 
                     {/* LinkedIn link */}
-                    <Nav.Link href={t('linked_in_link')} target="_blank" rel="noreferrer" className={ mediaQuery.matches ? 'nav-bar-link  offcanvas-size offcanvas-links' : 'nav-bar-link  text-end' } >{ mediaQuery.matches ? `${t('my')} LinkedIn` : '' }<FaLinkedin className={ mediaQuery.matches ? 'offcanvas-hidden' : '' }/></Nav.Link>
+                    <Nav.Link href={t('linked_in_link')} target="_blank" rel="noreferrer" className={ mediaQuery ? 'nav-bar-link offcanvas-size offcanvas-links' : 'nav-bar-link  text-end' } >{ mediaQuery ? `${t('my')} LinkedIn` : '' }<FaLinkedin className={ mediaQuery ? 'offcanvas-hidden' : '' }/></Nav.Link>
 
                     {/* GitHub link */}
-                    <Nav.Link href="https://www.github.com/laszloscheers" target="_blank" rel="noreferrer" className={ mediaQuery.matches ? 'nav-bar-link  offcanvas-size offcanvas-links' : 'nav-bar-link ' } >{ mediaQuery.matches ? `${t('my')} GitHub` : '' }<FaGithub className={ mediaQuery.matches ? 'offcanvas-hidden' : '' }/></Nav.Link>
+                    <Nav.Link href="https://www.github.com/laszloscheers" target="_blank" rel="noreferrer" className={ mediaQuery ? 'nav-bar-link  offcanvas-size offcanvas-links' : 'nav-bar-link ' } >{ mediaQuery ? `${t('my')} GitHub` : '' }<FaGithub className={ mediaQuery ? 'offcanvas-hidden' : '' }/></Nav.Link>
 
                     {/* Dropdown for email */}
                     <Dropdown>
-                      <Dropdown.Toggle className={navbar ? `nav-link nav-bar-link  me-4 ${ mediaQuery.matches ? 'offcanvas-style offcanvas-size offcanvas-links' : ' scroll' }` : `nav-link nav-bar-link  me-4 ${ mediaQuery.matches ? 'offcanvas-style offcanvas-size offcanvas-links' : ' top' }`}>
-                        { mediaQuery.matches ? `${t('my')} ${t('email_mobile')}` : '' }<MdEmail className={ mediaQuery.matches ? 'offcanvas-hidden' : 'nav-email' }/>
+                      <Dropdown.Toggle className={navbar ? `nav-link nav-bar-link me-4 ${ mediaQuery ? 'offcanvas-style offcanvas-size offcanvas-links mb-2' : ' scroll' }` : `nav-link nav-bar-link me-4 ${ mediaQuery ? 'offcanvas-style offcanvas-size offcanvas-links mb-2' : ' top' }`}>
+                        { mediaQuery ? `${t('my')} ${t('email_mobile')} ` : '' }<MdEmail className={ mediaQuery ? 'offcanvas-hidden' : 'nav-email' }/>
                       </Dropdown.Toggle>
 
-                      <Dropdown.Menu>
-                        <Dropdown.Item className='drop-item mb-2'><button onClick={() => navigator.clipboard.writeText('laszloscheers@gmail.com')} className='dropdown-button'><FaCopy className='me-3'/>{t('dropdown-clipboard_1')}<span>{t('email')}</span>{t('dropdown-clipboard_2')}</button></Dropdown.Item>
-                        <Dropdown.Item href="mailto:laszloscheers@gmail.com" className='drop-item'><MdEmail className='me-3'/>{t('dropdown-send')}</Dropdown.Item>
+                      <Dropdown.Menu className='p-4 mt-2 mb-3 ms-1'>
+                        <Dropdown.Item className='drop-item'><button onClick={() => navigator.clipboard.writeText('laszloscheers@gmail.com')} className={ mediaQuery ? 'dropdown-button mb-3 dropdown-size' : 'dropdown-button mb-2' }><FaCopy className='me-3'/>{t('dropdown-clipboard')}</button></Dropdown.Item>
+                        <Dropdown.Item href="mailto:laszloscheers@gmail.com" className={ mediaQuery ? 'drop-item dropdown-size' : 'drop-item' }><MdEmail className='me-3'/>{t('dropdown-send')}</Dropdown.Item>
                       </Dropdown.Menu>
                     </Dropdown>
 
                     {/* Language title on offcanvas menu */}
-                    <Nav.Link className={ mediaQuery.matches ? 'nav-bar-link offcanvas-titles mt-3' : 'offcanvas-hidden' } >{t('languages')}</Nav.Link>
+                    <Nav.Link className={ mediaQuery ? 'nav-bar-link offcanvas-titles mt-2' : 'offcanvas-hidden' } >{t('languages')}</Nav.Link>
 
                     {/* Language options */}
                     <div className='d-flex flex-row justify-content-start'>
                     {languages.map(({ code, country_code, name}) => (
                         <div className='d-flex align-items-center' key={country_code}>
-                            <button className={navbar ? `nav-link nav-bar-link ${ mediaQuery.matches ? 'offcanvas-style offcanvas-size offcanvas-links' : 'scroll' }` : `nav-link nav-bar-link ${ mediaQuery.matches ? 'offcanvas-style offcanvas-size offcanvas-links' : 'top' }`} key={country_code} onClick={() => i18next.changeLanguage(code)} disabled={ code === currentLanguageCode} ><span className={code === currentLanguageCode ? 'offcanvas-links' : '' } >{name}</span></button>
+                            <button className={navbar ? `nav-link nav-bar-link ${ mediaQuery ? 'offcanvas-style offcanvas-size' : 'scroll' }` : `nav-link nav-bar-link ${ mediaQuery ? 'offcanvas-style offcanvas-size' : 'top' }`} key={country_code} onClick={() => i18next.changeLanguage(code)} disabled={ code === currentLanguageCode} ><span className={code === currentLanguageCode ? 'offcanvas-languages' : '' } >{name}</span></button>
                             &nbsp;
                             {code === 'en' ? '/' : ''}
                             &nbsp;

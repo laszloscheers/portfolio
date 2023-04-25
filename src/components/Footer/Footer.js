@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useTranslation } from "react-i18next";
 import { animateScroll as scroll } from 'react-scroll'
 import { TbCircleArrowUpFilled } from 'react-icons/tb';
@@ -24,14 +24,24 @@ function Footer() {
   window.addEventListener('scroll', changeVisivility)
 
   // Handles back-to-top arrow visiblity for small screens
+  const [mediaQuery, setMediaQuery] = useState(false);
 
-  const mediaQuery = window.matchMedia('(max-width: 991px)');
+  useEffect(() => {
+    window.matchMedia("(max-width: 991px)").addEventListener("change", e => {
+      const mediaMatches = e.matches;
+      if (mediaMatches){
+        setMediaQuery(true)
+      } else{
+        setMediaQuery(false)
+      }
+    });
+  });
 
   return (
     <footer>
 
       {/* Back-to-top arrow */}
-      <div id='back_to_top_cont' onClick={() => scroll.scrollToTop()}><TbCircleArrowUpFilled className={arrowUp && !mediaQuery.matches ? 'back_to_top' : 'arrow-up-hidden'}/></div>
+      <div id='back_to_top_cont' onClick={() => scroll.scrollToTop()}><TbCircleArrowUpFilled className={arrowUp && !mediaQuery ? 'back_to_top' : 'arrow-up-hidden'}/></div>
 
       {/* Copyright section */}
       <div className='text-center p-4 d-flex justify-content-center footer-colour'>

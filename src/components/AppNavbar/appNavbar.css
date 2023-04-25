@@ -1,10 +1,26 @@
-/* Fixed height for navbar*/
+/* Navbar layout*/
 .navbar{
-    height:70px;
+    height:65px;
 }
+
 .nav-padding{
-    padding-left: 7%;
+    padding-left: 5.5%;
 }
+
+@media (max-width: 991px) and (min-width: 576px){
+    .nav-padding{
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+@media (max-width: 576px){
+    .nav-padding{
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
 /* Top and scroll styles for navbar*/
 .top{
     background-color: #f8f8f8 !important;
@@ -13,7 +29,7 @@
 
 .scroll { 
 	background-color: #dce8f8 !important;
-    transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out !important;
 }
 
 /* Brand*/
@@ -32,7 +48,7 @@
     padding-left: 0 !important;
 }
 
-/* Every link*/
+/* Links */
 .nav-bar-link{
     font-size: larger;
     border: none;
@@ -45,17 +61,9 @@
     transition: none !important;
 }
 
-.nav-email{
-    margin-bottom: 3px;
-}
-
 /* Dropdown menu for email*/
 .dropdown-item{
     padding: 0;
-}
-
-.dropdown-menu{
-    padding: 23% 25% 23% 25%;
 }
 
 .dropdown-button{
@@ -73,17 +81,18 @@
     color: rgba(0, 0, 0, 0.55);
 }
 
-.drop-item span{
-    color: rgba(0, 0, 0, 0.7);
-}
-
-.drop-item span:hover{
-    color: #008cf4;
-}
-
 .drop-item:hover{
     background-color: #ffffff;
     color: #008cf4;
+}
+
+.dropdown-size{
+    font-size:larger;
+}
+
+.dropdown-menu a:nth-child(2) svg{
+    transform: scale(1.15);
+    margin-left: 2px;
 }
 
 /* Offcanvas links*/
@@ -91,9 +100,20 @@
     display: none;
 }
 
+.offcanvas-logo{
+    color: #008cf4;
+    border: none;
+    font-size:xx-large
+}
+
+.offcanvas-logo:hover{
+    color: #4064ac!important;
+}
+
 .offcanvas-style{
     background-color: #ffffff !important;
 }
+
 .offcanvas-size{
     font-size:x-large;
 }
@@ -102,9 +122,22 @@
     color: #008cf4 !important;
 }
 
+.offcanvas-links:hover{
+    color: #4064ac!important;
+}
+
+.offcanvas-languages{
+    color: #008cf4 !important;
+}
+
 .offcanvas-titles{
     cursor:default;
     color: rgba(0, 0, 0, 0.65) !important;
     font-size:x-large;
     font-family: "Inter-Bold", "Segoe UI";
+}
+
+.offcanvas-titles:hover{
+    cursor:default;
+    color: rgba(0, 0, 0, 0.65) !important;
 }

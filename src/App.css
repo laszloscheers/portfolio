@@ -1,6 +1,6 @@
 /* Scroll behaviour to land at section considering the sticky navbar*/
 html{
-    scroll-padding-top: 70px;
+    scroll-padding-top: 65px;
 }
 
 /* Fonts*/

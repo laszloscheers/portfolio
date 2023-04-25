@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import { useTranslation } from "react-i18next";
 import { Container, Row, Col, Image } from 'react-bootstrap';
 
@@ -10,16 +11,27 @@ function Home() {
     // Language swapping tool
     const { t } = useTranslation()
 
-    // Handles which class to use depending on the size of the screen
-    const mediaQuery = window.matchMedia('(max-width: 768px)');
-    
+    // Handles layout of section columns for small screens
+    const [mediaQuery, setMediaQuery] = useState(false);
+
+    useEffect(() => {
+      window.matchMedia("(max-width: 991px)").addEventListener("change", e => {
+        const mediaMatches = e.matches;
+        if (mediaMatches){
+          setMediaQuery(true)
+        } else{
+          setMediaQuery(false)
+        }
+      });
+    });
+
     return (
         <div>
             {/*Hero Section*/}
             <section className="hero">
                 <Container>
                     <Row className="hero-row">
-                        <Col md className="hero-col">
+                        <Col lg className="hero-col">
                             {/* t() calls the key values in the locales/language json file corresponding to the active language*/}
                             <h1 className="bold">{t('header')}</h1>
                             <p>
@@ -31,11 +43,11 @@ function Home() {
                             </p>
                             <p>
                                 {t('under_sub_header_1')}
-                                <a href="#littletowns-agora"className='nav-link home-link' >{t('under_sub_header_my_proyects')}</a>
+                                <a href="#littletown"className='nav-link home-link' >{t('under_sub_header_my_proyects')}</a>
                                 {t('under_sub_header_2')}
                             </p>
                         </Col>
-                        <Col md className="d-flex justify-content-start">
+                        <Col lg className={ mediaQuery ? 'd-flex justify-content-center' : 'd-flex justify-content-start' }>
                             <Image src="./assets/images/me.png" alt="Drawing of Laszlo Scheers" className="hero-img" fluid></Image>
                         </Col>
                     </Row>
@@ -43,18 +55,18 @@ function Home() {
             </section>
 
             {/*First Project Section*/}
-            <section className="section-first" id="littletowns-agora">
+            <section className="section-first" id="littletown">
                 <Container>
                     <Row className="row-sections d-flex align-items-center">
 
                         {/* Media query selects the class corresponding with the size of the screen */}
-                        <Col md className={ mediaQuery.matches ? 'd-flex justify-content-start last' : 'd-flex justify-content-start' }>
-                            <Image src="./assets/images/littletown.png" alt="Example of Litletown's web page" className="sections-img" fluid ></Image>
+                        <Col lg className={ mediaQuery ? 'd-flex justify-content-center last' : 'd-flex justify-content-center' }>
+                            <Image src="./assets/images/littletown.png" alt="Example of Litletown's web page" className="sections-img sections-img-odd" fluid ></Image>
                         </Col>
-                        <Col md className={ mediaQuery.matches ? 'col-sections-odd col-sections first' : 'col-sections-odd col-sections' }>
+                        <Col lg className={ mediaQuery ? 'col-sections-odd col-sections first' : 'col-sections-odd col-sections' }>
                             <h2 className="bold mb-4">Littletown's Agora</h2>
                             <p>{t('little_town_description')}</p>
-                            <a href="https://littletownsagora.fly.dev/" target="_blank" rel="noreferrer" className='nav-link bold home-link mt-3' >{t('visit_web')}<span className='ms-2'><ImArrowRight2 className='expand'/></span></a>
+                            <a href="https://littletownsagora.fly.dev/" target="_blank" rel="noreferrer" className='nav-link bold home-link' >{t('visit_web')}<span className='ms-2'><ImArrowRight2 className='expand'/></span></a>
                         </Col>
 
                     </Row>
@@ -65,12 +77,12 @@ function Home() {
             <section className="section-second">
                 <Container>
                     <Row className="row-sections d-flex align-items-center">
-                        <Col md className='col-sections'>
+                        <Col lg className='col-sections col-sections-even'>
                             <h2 className="bold mb-4">{t('festrip_title')}</h2>
                             <p>{t('festrip_description')}</p>
                             <a href="https://festrip.fly.dev/" target="_blank" rel="noreferrer" className='nav-link bold home-link mt-3' >{t('visit_web')}<span className='ms-2'><ImArrowRight2 className='expand'/></span></a>
                         </Col>
-                        <Col md className="d-flex justify-content-start">
+                        <Col lg className="d-flex justify-content-center">
                             <Image src="./assets/images/festrip.png" alt="Example of Litletown's web page" className="sections-img" fluid ></Image>
                         </Col>
                     </Row>
@@ -81,10 +93,10 @@ function Home() {
             <section className="section-third">
                 <Container>
                     <Row className="row-sections d-flex align-items-center">
-                        <Col md className={ mediaQuery.matches ? 'd-flex justify-content-start last' : 'd-flex justify-content-start' }>
-                            <Image src="./assets/images/watson-s.png" alt="Example of Litletown's web page" className="sections-img" fluid ></Image>
+                        <Col lg className={ mediaQuery ? 'd-flex justify-content-center last' : 'd-flex justify-content-center' }>
+                            <Image src="./assets/images/watson-s.png" alt="Example of Litletown's web page" className="sections-img sections-img-odd" fluid ></Image>
                         </Col>
-                        <Col md className={ mediaQuery.matches ? 'col-sections-odd col-sections first' : 'col-sections-odd col-sections' }>
+                        <Col lg className={ mediaQuery ? 'col-sections-odd col-sections first' : 'col-sections-odd col-sections' }>
                             <h2 className="bold mb-4">Football Hub</h2>
                             <p>{t('football_app_description')}</p>
                             <a href="https://acsdfinalproject.web.app/" target="_blank" rel="noreferrer" className='nav-link bold home-link mt-3' >{t('visit_web')}<span className='ms-2'><ImArrowRight2 className='expand'/></span></a>
@@ -97,12 +109,12 @@ function Home() {
             <section className="section-first">
                 <Container>
                     <Row className="row-sections d-flex align-items-center">
-                        <Col md className='col-sections'>
+                        <Col lg className='col-sections col-sections-even'>
                             <h2 className="bold mb-4">{t('watsons_title')}</h2>
                             <p>{t('watsons_description')}</p>
                             <a href="https://laszloscheers.github.io/Watson-s/index.html" target="_blank" rel="noreferrer" className='nav-link bold home-link mt-3' >{t('visit_web')}<span className='ms-2 '><ImArrowRight2 className='expand'/></span></a>
                         </Col>
-                        <Col md className="d-flex justify-content-start">
+                        <Col lg className="d-flex justify-content-center">
                             <Image src="./assets/images/watson-s.png" alt="Example of Litletown's web page" className="sections-img" fluid ></Image>
                         </Col>
                     </Row>
