@@ -112,7 +112,7 @@ function Home() {
                         <Col lg className='col-sections col-sections-even'>
                             <h2 className="bold mb-4">{t('watsons_title')}</h2>
                             <p>{t('watsons_description')}</p>
-                            <a href="https://laszloscheers.github.io/Watson-s/index.html" target="_blank" rel="noreferrer" className='nav-link bold home-link mt-3' >{t('visit_web')}<span className='ms-2 '><ImArrowRight2 className='expand'/></span></a>
+                            <a href="https://laszloscheers.github.io/watsons_detective_agency/" target="_blank" rel="noreferrer" className='nav-link bold home-link mt-3' >{t('visit_web')}<span className='ms-2 '><ImArrowRight2 className='expand'/></span></a>
                         </Col>
                         <Col lg className="d-flex justify-content-center">
                             <Image src="./assets/images/watson-s.png" alt="Example of Litletown's web page" className="sections-img" fluid ></Image>
