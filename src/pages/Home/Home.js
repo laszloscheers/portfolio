@@ -90,7 +90,7 @@ function Home() {
             </section>
 
             {/*Third Project Section*/}
-            <section className="section-third">
+            <section className="section-first">
                 <Container>
                     <Row className="row-sections d-flex align-items-center">
                         <Col lg className={ mediaQuery ? 'd-flex justify-content-center last' : 'd-flex justify-content-center' }>
@@ -106,7 +106,7 @@ function Home() {
             </section>
 
             {/*Fourth Project Section*/}
-            <section className="section-first">
+            <section className="section-second">
                 <Container>
                     <Row className="row-sections d-flex align-items-center">
                         <Col lg className='col-sections col-sections-even'>
