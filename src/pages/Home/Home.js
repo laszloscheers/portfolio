@@ -11,13 +11,24 @@ function Home() {
     // Language swapping tool
     const { t } = useTranslation()
 
-    // Handles layout of section columns for small screens
+    // Handles offcanvas inner text visiblity for small screens
     const [mediaQuery, setMediaQuery] = useState(false);
+    const firstLoadMediaQuery = window.matchMedia('(max-width: 991px)').matches;
     
-    var firstLoadMediaQuery = window.matchMedia('(max-width: 576px)');
-
+    const [dimensions, setDimensions] = useState({
+      height: window.innerHeight,
+      width: window.innerWidth
+    })
     useEffect(() => {
-      window.matchMedia("(max-width: 991px)").addEventListener("change", e => {
+      function handleResize() {
+        setDimensions({
+          height: window.innerHeight,
+          width: window.innerWidth
+        })
+      }
+      window.addEventListener('resize', handleResize)
+
+      window.matchMedia("(max-width: 576px)").addEventListener("change", e => {
         const mediaMatches = e.matches;
         if (mediaMatches){
           setMediaQuery(true)
@@ -25,7 +36,7 @@ function Home() {
           setMediaQuery(false)
         }
       });
-    });
+    },[dimensions]);
 
     return (
         <div>

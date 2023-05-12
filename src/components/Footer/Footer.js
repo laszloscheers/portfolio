@@ -26,7 +26,7 @@ function Footer() {
   // Handles back-to-top arrow visiblity for small screens
   const [mediaQuery, setMediaQuery] = useState(false);
 
-  var firstLoadMediaQuery = window.matchMedia('(max-width: 576px)');
+  var firstLoadMediaQuery = window.matchMedia('(max-width: 576px)').matches;
 
   useEffect(() => {
     window.matchMedia("(max-width: 991px)").addEventListener("change", e => {
@@ -43,7 +43,7 @@ function Footer() {
     <footer>
 
       {/* Back-to-top arrow */}
-      <div id='back_to_top_cont' onClick={() => scroll.scrollToTop()}><TbCircleArrowUpFilled className={arrowUp && !(firstLoadMediaQuery.matches || mediaQuery) ? 'back_to_top' : 'arrow-up-hidden'}/></div>
+      <div id='back_to_top_cont' onClick={() => scroll.scrollToTop()}><TbCircleArrowUpFilled className={arrowUp && !(firstLoadMediaQuery || mediaQuery) ? 'back_to_top' : 'arrow-up-hidden'}/></div>
 
       {/* Copyright section */}
       <div className='text-center p-4 d-flex justify-content-center footer-colour'>
