@@ -13,6 +13,8 @@ function Home() {
 
     // Handles layout of section columns for small screens
     const [mediaQuery, setMediaQuery] = useState(false);
+    
+    var firstLoadMediaQuery = window.matchMedia('(max-width: 576px)');
 
     useEffect(() => {
       window.matchMedia("(max-width: 991px)").addEventListener("change", e => {
@@ -47,7 +49,7 @@ function Home() {
                                 {t('under_sub_header_2')}
                             </p>
                         </Col>
-                        <Col lg className={ mediaQuery ? 'd-flex justify-content-center' : 'd-flex justify-content-start' }>
+                        <Col lg className={ firstLoadMediaQuery || mediaQuery ? 'd-flex justify-content-center' : 'd-flex justify-content-start' }>
                             <Image src="./assets/images/me.png" alt="Drawing of Laszlo Scheers" className="hero-img" fluid></Image>
                         </Col>
                     </Row>
@@ -60,10 +62,10 @@ function Home() {
                     <Row className="row-sections d-flex align-items-center">
 
                         {/* Media query selects the class corresponding with the size of the screen */}
-                        <Col lg className={ mediaQuery ? 'd-flex justify-content-center last' : 'd-flex justify-content-center' }>
+                        <Col lg className={ firstLoadMediaQuery || mediaQuery ? 'd-flex justify-content-center last' : 'd-flex justify-content-center' }>
                             <Image src="./assets/images/littletown.png" alt="Example of Litletown's web page" className="sections-img sections-img-odd" fluid ></Image>
                         </Col>
-                        <Col lg className={ mediaQuery ? 'col-sections-odd col-sections first' : 'col-sections-odd col-sections' }>
+                        <Col lg className={ firstLoadMediaQuery || mediaQuery ? 'col-sections-odd col-sections first' : 'col-sections-odd col-sections' }>
                             <h2 className="bold mb-4">Littletown's Agora</h2>
                             <p>{t('little_town_description')}</p>
                             <a href="https://littletownsagora.fly.dev/" target="_blank" rel="noreferrer" className='nav-link bold home-link' >{t('visit_web')}<span className='ms-2'><ImArrowRight2 className='expand'/></span></a>
@@ -93,10 +95,10 @@ function Home() {
             <section className="section-first">
                 <Container>
                     <Row className="row-sections d-flex align-items-center">
-                        <Col lg className={ mediaQuery ? 'd-flex justify-content-center last' : 'd-flex justify-content-center' }>
+                        <Col lg className={ firstLoadMediaQuery || mediaQuery ? 'd-flex justify-content-center last' : 'd-flex justify-content-center' }>
                             <Image src="./assets/images/watson-s.png" alt="Example of Litletown's web page" className="sections-img sections-img-odd" fluid ></Image>
                         </Col>
-                        <Col lg className={ mediaQuery ? 'col-sections-odd col-sections first' : 'col-sections-odd col-sections' }>
+                        <Col lg className={ firstLoadMediaQuery || mediaQuery ? 'col-sections-odd col-sections first' : 'col-sections-odd col-sections' }>
                             <h2 className="bold mb-4">Football Hub</h2>
                             <p>{t('football_app_description')}</p>
                             <a href="https://acsdfinalproject.web.app/" target="_blank" rel="noreferrer" className='nav-link bold home-link mt-3' >{t('visit_web')}<span className='ms-2'><ImArrowRight2 className='expand'/></span></a>
