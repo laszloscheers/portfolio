@@ -63,7 +63,7 @@ const AppNavbar = () => {
           setMediaQuery(false)
         }
       });
-    });
+    },[firstLoadMediaQuery]);
 
     return (
         <Navbar expand="sm" bg="light" sticky="top" className={navbar ? 'scroll' : 'top'}>
