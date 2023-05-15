@@ -23,12 +23,23 @@ function Footer() {
 
   window.addEventListener('scroll', changeVisivility)
 
-  // Handles back-to-top arrow visiblity for small screens
+  // Handles offcanvas inner text visiblity for small screens
   const [mediaQuery, setMediaQuery] = useState(false);
-
-  var firstLoadMediaQuery = window.matchMedia('(max-width: 576px)');
-
+  const firstLoadMediaQuery = window.matchMedia('(max-width: 991px)').matches;
+  
+  const [dimensions, setDimensions] = useState({
+    height: window.innerHeight,
+    width: window.innerWidth
+  })
   useEffect(() => {
+    function handleResize() {
+      setDimensions({
+        height: window.innerHeight,
+        width: window.innerWidth
+      })
+    }
+    window.addEventListener('resize', handleResize)
+
     window.matchMedia("(max-width: 991px)").addEventListener("change", e => {
       const mediaMatches = e.matches;
       if (mediaMatches){
@@ -37,13 +48,13 @@ function Footer() {
         setMediaQuery(false)
       }
     });
-  });
+  },[dimensions]);
 
   return (
     <footer>
 
       {/* Back-to-top arrow */}
-      <div id='back_to_top_cont' onClick={() => scroll.scrollToTop()}><TbCircleArrowUpFilled className={arrowUp && !(firstLoadMediaQuery.matches || mediaQuery) ? 'back_to_top' : 'arrow-up-hidden'}/></div>
+      <div id='back_to_top_cont' onClick={() => scroll.scrollToTop()}><TbCircleArrowUpFilled className={arrowUp && !(firstLoadMediaQuery || mediaQuery) ? 'back_to_top' : 'arrow-up-hidden'}/></div>
 
       {/* Copyright section */}
       <div className='text-center p-4 d-flex justify-content-center footer-colour'>

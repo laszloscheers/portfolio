@@ -11,12 +11,23 @@ function Home() {
     // Language swapping tool
     const { t } = useTranslation()
 
-    // Handles layout of section columns for small screens
+    // Handles offcanvas inner text visiblity for small screens
     const [mediaQuery, setMediaQuery] = useState(false);
+    const firstLoadMediaQuery = window.matchMedia('(max-width: 991px)').matches;
     
-    var firstLoadMediaQuery = window.matchMedia('(max-width: 576px)');
-
+    const [dimensions, setDimensions] = useState({
+      height: window.innerHeight,
+      width: window.innerWidth
+    })
     useEffect(() => {
+      function handleResize() {
+        setDimensions({
+          height: window.innerHeight,
+          width: window.innerWidth
+        })
+      }
+      window.addEventListener('resize', handleResize)
+
       window.matchMedia("(max-width: 991px)").addEventListener("change", e => {
         const mediaMatches = e.matches;
         if (mediaMatches){
@@ -25,7 +36,7 @@ function Home() {
           setMediaQuery(false)
         }
       });
-    });
+    },[dimensions]);
 
     return (
         <div>
@@ -82,7 +93,7 @@ function Home() {
                         <Col lg className='col-sections col-sections-even'>
                             <h2 className="bold mb-4">{t('festrip_title')}</h2>
                             <p>{t('festrip_description')}</p>
-                            <a href="https://festrip.fly.dev/" target="_blank" rel="noreferrer" className='nav-link bold home-link mt-3' >{t('visit_web')}<span className='ms-2'><ImArrowRight2 className='expand'/></span></a>
+                            <a href="https://festrip-tickets.fly.dev/" target="_blank" rel="noreferrer" className='nav-link bold home-link mt-3' >{t('visit_web')}<span className='ms-2'><ImArrowRight2 className='expand'/></span></a>
                         </Col>
                         <Col lg className="d-flex justify-content-center">
                             <Image src="./assets/images/festrip.png" alt="Example of Litletown's web page" className="sections-img" fluid ></Image>
