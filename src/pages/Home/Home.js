@@ -28,7 +28,7 @@ function Home() {
       }
       window.addEventListener('resize', handleResize)
 
-      window.matchMedia("(max-width: 576px)").addEventListener("change", e => {
+      window.matchMedia("(max-width: 991px)").addEventListener("change", e => {
         const mediaMatches = e.matches;
         if (mediaMatches){
           setMediaQuery(true)

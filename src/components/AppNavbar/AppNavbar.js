@@ -31,11 +31,6 @@ const AppNavbar = () => {
     // Current Language
     const currentLanguageCode = cookie.get('i18next') || 'en';
 
-    // Change tab title on language swap
-    useEffect(() => {
-        document.title = t('app_title')
-    },[t]);
-
     // Change navbar colour on scroll
     const [navbar, setNavbar] = useState(false);
 
@@ -57,7 +52,12 @@ const AppNavbar = () => {
       height: window.innerHeight,
       width: window.innerWidth
     })
+
     useEffect(() => {
+
+      // Change tab title on language swap
+      document.title = t('app_title');
+
       function handleResize() {
         setDimensions({
           height: window.innerHeight,
@@ -74,7 +74,7 @@ const AppNavbar = () => {
           setMediaQuery(false)
         }
       });
-    },[dimensions]);
+    },[dimensions, t]);
 
     return (
         <Navbar expand="sm" bg="light" sticky="top" className={navbar ? 'scroll' : 'top'}>
