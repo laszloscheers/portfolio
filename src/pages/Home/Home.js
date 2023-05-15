@@ -19,6 +19,7 @@ function Home() {
       height: window.innerHeight,
       width: window.innerWidth
     })
+    
     useEffect(() => {
       function handleResize() {
         setDimensions({
