@@ -72,6 +72,10 @@
     border: none;
     padding: 0;
 }
+.dropdown-menu{
+    --bs-dropdown-link-active-color: #008cf4 !important;
+    --bs-dropdown-link-active-bg: #ffffff !important;
+}
 
 .dropdown-button:hover{
     color: #008cf4;
@@ -128,6 +132,9 @@
 
 .offcanvas-languages{
     color: #008cf4 !important;
+}
+.offcanvas-languages-faded{
+    color: rgba(0, 0, 0, 0.65) !important;
 }
 
 .offcanvas-titles{

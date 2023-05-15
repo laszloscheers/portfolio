@@ -129,7 +129,7 @@ const AppNavbar = () => {
                     <div className='d-flex flex-row justify-content-start'>
                     {languages.map(({ code, country_code, name}) => (
                         <div className='d-flex align-items-center' key={country_code}>
-                            <button className={navbar ? `nav-link nav-bar-link ${ firstLoadMediaQuery || mediaQuery ? 'offcanvas-style offcanvas-size' : 'scroll' }` : `nav-link nav-bar-link ${ firstLoadMediaQuery || mediaQuery ? 'offcanvas-style offcanvas-size' : 'top' }`} key={country_code} onClick={() => i18next.changeLanguage(code)} disabled={ code === currentLanguageCode} ><span className={code === currentLanguageCode ? 'offcanvas-languages' : '' } >{name}</span></button>
+                            <button className={navbar ? `nav-link nav-bar-link ${ firstLoadMediaQuery || mediaQuery ? 'offcanvas-style offcanvas-size' : 'scroll' }` : `nav-link nav-bar-link ${ firstLoadMediaQuery || mediaQuery ? 'offcanvas-style offcanvas-size' : 'top' }`} key={country_code} onClick={() => i18next.changeLanguage(code)} disabled={ code === currentLanguageCode} ><span className={code === currentLanguageCode ? 'offcanvas-languages-faded' : 'offcanvas-languages' } >{name}</span></button>
                             &nbsp;
                             {code === 'en' ? '/' : ''}
                             &nbsp;
