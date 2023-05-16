@@ -7,7 +7,7 @@ import { TbCircleArrowUpFilled } from 'react-icons/tb';
 import './footer.css'
 
 function Footer() {
-  // Language swapping tool
+  // i18next language swapping tool
   const { t } = useTranslation()
 
   // Change visibility of back-to-top arrow
@@ -23,10 +23,15 @@ function Footer() {
 
   window.addEventListener('scroll', changeVisivility)
 
-  // Handles offcanvas inner text visiblity for small screens
-  const [mediaQuery, setMediaQuery] = useState(false);
+  // Handles offcanvas inner text visiblity for small screens and manage viewport changes for mobiles and tablets landscape mode.
+
+  // Media querry for the first time the page loads
   const firstLoadMediaQuery = window.matchMedia('(max-width: 991px)').matches;
-  
+
+  // Media query for every useEffect event listeners rerenders
+  const [mediaQuery, setMediaQuery] = useState(false);
+
+  // Stores the viewport size to recognize changes on it
   const [dimensions, setDimensions] = useState({
     height: window.innerHeight,
     width: window.innerWidth
