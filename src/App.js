@@ -1,3 +1,5 @@
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
 import AppNavbar from './components/AppNavbar/AppNavbar';
 import Footer from './components/Footer/Footer';
 import Home from './pages/Home/Home';
@@ -7,9 +9,23 @@ function App() {
 
   return (
   <div>      
-      <AppNavbar />
-      <Home />
-      <Footer />
+        <Router>
+            
+            <Navbar />
+            <Routes>
+                {/* Home route */}
+                <Route path="/" exact element={<Home />} />
+
+                {/* English language route */}
+                <Route path="/en" exact element={<Home language="en"/>} />
+
+                {/* Spanish language route */}
+                <Route path="/es" exact element={<Home language="es"/>} />
+
+            </Routes>
+
+            <Footer />
+        </Router>
     </div>
   );
 }
