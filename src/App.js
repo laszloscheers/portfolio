@@ -11,7 +11,7 @@ function App() {
   <div>      
         <Router>
             
-            <Navbar />
+            <AppNavbar />
             <Routes>
                 {/* Home route */}
                 <Route path="/" exact element={<Home />} />
