@@ -1,0 +1,15 @@
+[[redirects]]
+  from = "/en"
+  to = "https://laszloscheers.com/en"
+  status = 200
+  force = true # COMMENT: ensure that we always redirect
+  headers = {X-From = "Netlify"}
+  signed = "API_SIGNATURE_TOKEN"
+
+  [[redirects]]
+  from = "/es"
+  to = "https://laszloscheers.com/es"
+  status = 200
+  force = true # COMMENT: ensure that we always redirect
+  headers = {X-From = "Netlify"}
+  signed = "API_SIGNATURE_TOKEN"

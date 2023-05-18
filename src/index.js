@@ -30,7 +30,6 @@ i18n
     },
     backend: {
       loadPath: '/assets/locales/{{lng}}/translation.json',
-      addPath: "/assets/locales/{{lng}}/translation.json"
     }
   });
 
