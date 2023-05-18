@@ -8,11 +8,6 @@ import "./home.css";
 
 function Home() {
 
-    // // i18next language swapping tool for Netlify routes
-    // if(language !== ""){
-    //     i18next.changeLanguage(language)
-    // }
-
     // i18next language swapping tool
     const { t } = useTranslation()
 
