@@ -1,9 +1,12 @@
-# SPA support for german locale
 [[redirects]]
-  from = "/en"
-  to = "/en/index.html"
+  force = true
+  from = "/en*"
+  to = "/en/:splat"
+  status = 200
 
-# SPA support for english locale
+
 [[redirects]]
-  from = "/es"
-  to = "/es/index.html"
+  force = true
+  from = "/es*"
+  to = "/es/:splat"
+  status = 200
