@@ -5,7 +5,6 @@ import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 import LanguageDetector from 'i18next-browser-languagedetector';
 import HttpApi from 'i18next-http-backend';
-import Backend from 'i18next-http-backend';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.min.js';
 import Lottie from '@amelix/react-lottie';
@@ -17,7 +16,6 @@ import App from './App';
 
 // Language swapping tool
 i18n
-  .use(Backend)
   .use(initReactI18next) // passes i18n down to react-i18next
   .use(LanguageDetector)
   .use(HttpApi)
