@@ -1,0 +1,9 @@
+# SPA support for german locale
+[[redirects]]
+  from = "/en/*"
+  to = "/en/index.html"
+
+# SPA support for english locale
+[[redirects]]
+  from = "/es/*"
+  to = "/es/index.html"

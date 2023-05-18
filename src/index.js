@@ -10,8 +10,6 @@ import 'bootstrap/dist/js/bootstrap.min.js';
 import Lottie from '@amelix/react-lottie';
 import * as skeleton from './animation/skeleton.json'
 
-import AppNavbar from './components/AppNavbar/AppNavbar';
-import Footer from './components/Footer/Footer';
 import App from './App';
 
 // Language swapping tool
@@ -43,9 +41,7 @@ const skeletonOption = {
 
 const loadingMarkup = (
   <div>
-    <AppNavbar />
       <Lottie options={skeletonOption} width="60%"/>
-    <Footer />
   </div>
 )
 
