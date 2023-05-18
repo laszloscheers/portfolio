@@ -20,7 +20,7 @@ function App() {
                 <Route path="/en" exact element={<Home language={'en'}/>}/>
 
                 {/* Spanish Displayed Route */}
-                <Route path="/es" exact element={<Home username={'es'}/>}/>
+                <Route path="/es" exact element={<Home language={'es'}/>}/>
             </Routes>
 
             <Footer />
