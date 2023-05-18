@@ -1,11 +1,11 @@
 [[redirects]]
-  from = "/en"
-  to = "/en"
-  status = 302
-  conditions = {Language = ["en"]}
+  from = "/en/*"
+  to = "https://laszloscheers/en/"
+  status = 200
+  force = true
 
 [[redirects]]
-  from = "/es"
-  to = "/es"
-  status = 302
-  conditions = {Language = ["es"]}
+  from = "/es/*"
+  to = "https://laszloscheers/es/"
+  status = 200
+  force = true
