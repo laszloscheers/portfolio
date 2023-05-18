@@ -7,9 +7,22 @@ function App() {
 
   return (
     <div>      
-      <AppNavbar />
-      <Home />
-      <Footer />
+        <Router>
+            
+            <AppNavbar />
+            <Routes>
+                {/* Home Route */}
+                <Route path="/" exact element={<Home />} />
+
+                {/* English Route */}
+                <Route path="/en" exact element={<Home language={'en'}/>}/>
+
+                {/* Spanish Displayed Route */}
+                <Route path="/es" exact element={<Home username={'es'}/>}/>
+            </Routes>
+
+            <Footer />
+        </Router>
     </div>
   );
 }

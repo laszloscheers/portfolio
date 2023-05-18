@@ -6,8 +6,10 @@ import { ImArrowRight2 } from 'react-icons/im';
 
 import "./home.css";
 
-function Home() {
-
+function Home(language) {
+    if(language){
+        i18next.changeLanguage(language);
+    }
     // i18next language swapping tool
     const { t } = useTranslation()
 
