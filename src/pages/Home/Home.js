@@ -1,12 +1,11 @@
 import { useState, useEffect } from 'react';
 import { useTranslation } from "react-i18next";
 import { Container, Row, Col, Image } from 'react-bootstrap';
-import i18next from 'i18next';
 import { ImArrowRight2 } from 'react-icons/im';
 
 import "./home.css";
 
-function Home({ language }) {
+function Home() {
 
     // i18next language swapping tool
     const { t } = useTranslation()
@@ -41,11 +40,7 @@ function Home({ language }) {
           setMediaQuery(false)
         }
       });
-      if(language){
-        i18next.changeLanguage(language);
-        console.log(language)
-    }
-    },[dimensions, language]);
+    },[dimensions]);
 
     return (
         <div>
@@ -83,7 +78,7 @@ function Home({ language }) {
 
                         {/* Media query selects the class corresponding with the size of the screen */}
                         <Col lg className={ firstLoadMediaQuery || mediaQuery ? 'd-flex justify-content-center last' : 'd-flex justify-content-center' }>
-                            <Image src="./assets/images/littletown.png" alt="Example of Litletown's web page" className="sections-img sections-img-odd" fluid ></Image>
+                            <Image src="./assets/images/littletown.png" alt="Example of Litletown's web page" className="first-img" ></Image>
                         </Col>
                         <Col lg className={ firstLoadMediaQuery || mediaQuery ? 'col-sections-odd col-sections first' : 'col-sections-odd col-sections' }>
                             <h2 className="bold mb-4">Littletown's Agora</h2>
@@ -116,12 +111,12 @@ function Home({ language }) {
                 <Container>
                     <Row className="row-sections d-flex align-items-center">
                         <Col lg className={ firstLoadMediaQuery || mediaQuery ? 'd-flex justify-content-center last' : 'd-flex justify-content-center' }>
-                            <Image src="./assets/images/watson-s.png" alt="Example of Litletown's web page" className="sections-img sections-img-odd" fluid ></Image>
+                            <Image src="./assets/images/watson-s.png" alt="Example of Litletown's web page" className="sections-img" fluid ></Image>
                         </Col>
                         <Col lg className={ firstLoadMediaQuery || mediaQuery ? 'col-sections-odd col-sections first' : 'col-sections-odd col-sections' }>
                             <h2 className="bold mb-4">Football Hub</h2>
                             <p>{t('football_app_description')}</p>
-                            <a href="https://acsdfinalproject.web.app/" target="_blank" rel="noreferrer" className='nav-link bold home-link mt-3' >{t('visit_web')}<span className='ms-2'><ImArrowRight2 className='expand'/></span></a>
+                            <a href="https://thefootballhub.netlify.app/" target="_blank" rel="noreferrer" className='nav-link bold home-link mt-3' >{t('visit_web')}<span className='ms-2'><ImArrowRight2 className='expand'/></span></a>
                         </Col>
                     </Row>
                 </Container>
