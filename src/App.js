@@ -17,10 +17,10 @@ function App() {
                 <Route path="/" exact element={<Home />} />
 
                 {/* English Route */}
-                <Route path="/en" exact element={<Home language={'en'}/>}/>
+                <Route path="/en" element={<Home language={'en'}/>}/>
 
                 {/* Spanish Displayed Route */}
-                <Route path="/es" exact element={<Home language={'es'}/>}/>
+                <Route path="/es" element={<Home language={'es'}/>}/>
             </Routes>
 
             <Footer />
