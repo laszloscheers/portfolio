@@ -43,6 +43,7 @@ function Home({ language }) {
       });
       if(language){
         i18next.changeLanguage(language);
+        console.log(language)
     }
     },[dimensions, language]);
 

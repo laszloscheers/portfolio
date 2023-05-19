@@ -19,7 +19,7 @@ function App() {
                 {/* English Route */}
                 <Route path="/en" exact element={<Home language={'en'}/>}/>
 
-                {/* Spanish Displayed Route */}
+                {/* Spanish Route */}
                 <Route path="/es" exact element={<Home language={'es'}/>}/>
             </Routes>
 
