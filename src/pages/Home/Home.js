@@ -1,12 +1,11 @@
 import { useState, useEffect } from 'react';
 import { useTranslation } from "react-i18next";
 import { Container, Row, Col, Image } from 'react-bootstrap';
-import i18next from 'i18next';
 import { ImArrowRight2 } from 'react-icons/im';
 
 import "./home.css";
 
-function Home({ language }) {
+function Home() {
 
     // i18next language swapping tool
     const { t } = useTranslation()
@@ -41,10 +40,7 @@ function Home({ language }) {
           setMediaQuery(false)
         }
       });
-      if(language){
-        i18next.changeLanguage(language);
-    }
-    },[dimensions, language]);
+    },[dimensions]);
 
     return (
         <div>
