@@ -106,10 +106,6 @@
     padding:13% 0% 15% 0%;
 }
 
-.sections-img{
-    max-width:690px;
-}
-
 .col-sections p{
     margin-bottom: 4%;
 }
@@ -117,9 +113,11 @@
 .col-sections-odd{
     margin-left: 5%;
 }
+
 .col-sections-even p{
     margin-right: 7%;
 }
+
 .first{
     order: 1;
 }
@@ -127,66 +125,101 @@
 .last{
     order: 2;
 }
-@media (max-width: 1400px){
-    .sections-img{
-        max-width:450px;
-    }
+
+@media (min-width: 1400px){
+    .first-img{
+        min-width: 650px;
+    }    
 }
+
+@media (max-width: 1399px){
+    .first-img{
+        max-width: 600px;
+    }    
+}
+
+@media (max-width: 1200px){
+    .first-img{
+        max-width: 450px;
+    }    
+}
+
 @media (max-width: 991px){
-    .sections-img{
-        max-width:530px;
-        margin-left: 0;
-    }
     .col-sections{
-        margin: 2% 0% 7% 17% !important;
+        margin-bottom: 7%;
+    }
+    .col-sections-even{
+        margin-left: 5%;
     }
     .row-sections{
         padding-bottom:15%;
     }
+    .row-sections div p{
+        padding-right: 5%;
+    }
+    .first-img {
+        max-width: 600px;
+    }
+    .sections-img {
+        max-width: 600px;
+    }
 }
 
 @media (max-width: 767px){
-    .col-sections{
-        margin: 7% 0% 11% 5% !important;
-    }
     .row-sections{
         padding-bottom:22%;
-    }
-    .row-sections div p{
-        max-width: 80%;
     }
     .col-sections{
         flex-shrink: none !important;
     }
-
+    .col-sections-even, .col-sections-odd{
+        margin-left: 0%;
+    }
+    
 }
+
+@media (max-width: 694px){
+    .first-img {
+        max-width: 500px;
+    }
+    .sections-img {
+        max-width: 500px;
+    }
+}
+
 @media (max-width: 594px){
     .col-sections{
         flex-shrink: 1 !important;
     }
-
+    .first-img {
+        max-width: 450px;
+    }
+    .sections-img {
+        max-width: 450px;
+    }
 }
 
 @media (max-width: 576px){
     .col-sections{
-        margin: 7% 0% 12% 10% !important;
+        margin: 7% 5% 12% 10% !important;
     }
-    .sections-img{
-        max-width:450px;
-    }
-    .row-sections div p{
-        max-width: 85%;
-    }
+    
 }
 @media (max-width: 540px){
-    .sections-img{
-        max-width:400px;
+    .first-img {
+        max-width: 400px;
+    }
+    .sections-img {
+        max-width: 400px;
     }
 }
 
 @media (max-width: 420px){
-    .sections-img{
-        max-width:310px;
+    .first-img {
+        max-width: 300px;
+    }
+    .sections-img {
+        max-width: 300px;
     }
 }
 /* All links*/

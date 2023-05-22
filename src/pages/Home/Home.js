@@ -77,7 +77,7 @@ function Home() {
                     <Row className="row-sections d-flex align-items-center">
 
                         {/* Media query selects the class corresponding with the size of the screen */}
-                        <Col lg className={ firstLoadMediaQuery || mediaQuery ? 'd-flex justify-content-center last' : 'd-flex justify-content-center' }>
+                        <Col lg className={ firstLoadMediaQuery || mediaQuery ? 'd-flex justify-content-center last' : 'd-flex justify-content-center ps-0' }>
                             <Image src="./assets/images/littletown.png" alt="Example of Litletown's web page" className="first-img" ></Image>
                         </Col>
                         <Col lg className={ firstLoadMediaQuery || mediaQuery ? 'col-sections-odd col-sections first' : 'col-sections-odd col-sections' }>
@@ -97,7 +97,7 @@ function Home() {
                         <Col lg className='col-sections col-sections-even'>
                             <h2 className="bold mb-4">{t('festrip_title')}</h2>
                             <p>{t('festrip_description')}</p>
-                            <a href="https://festrip-tickets.fly.dev/" target="_blank" rel="noreferrer" className='nav-link bold home-link mt-3' >{t('visit_web')}<span className='ms-2'><ImArrowRight2 className='expand'/></span></a>
+                            <a href="https://festriptickets.fly.dev/" target="_blank" rel="noreferrer" className='nav-link bold home-link mt-3' >{t('visit_web')}<span className='ms-2'><ImArrowRight2 className='expand'/></span></a>
                         </Col>
                         <Col lg className="d-flex justify-content-center">
                             <Image src="./assets/images/festrip.png" alt="Example of Litletown's web page" className="sections-img" fluid ></Image>
