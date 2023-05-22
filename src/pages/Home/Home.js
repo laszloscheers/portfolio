@@ -48,7 +48,7 @@ function Home() {
             <section className="hero">
                 <Container>
                     <Row className="hero-row">
-                        <Col lg className="hero-col">
+                        <Col lg className={ firstLoadMediaQuery || mediaQuery ? 'hero-col last' : 'hero-col' }>
                             {/* t() calls the key values in the locales/language json file corresponding to the active language*/}
                             <h1 className="bold">{t('header')}</h1>
                             <p>
@@ -64,7 +64,7 @@ function Home() {
                                 {t('under_sub_header_2')}
                             </p>
                         </Col>
-                        <Col lg className={ firstLoadMediaQuery || mediaQuery ? 'd-flex justify-content-center' : 'd-flex justify-content-start' }>
+                        <Col lg className={ firstLoadMediaQuery || mediaQuery ? 'd-flex justify-content-center first' : 'd-flex justify-content-start' }>
                             <Image src="./assets/images/me.png" alt="Drawing of Laszlo Scheers" className="hero-img" fluid></Image>
                         </Col>
                     </Row>

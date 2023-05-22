@@ -106,12 +106,8 @@
     padding:13% 0% 15% 0%;
 }
 
-.first-img{
-    min-width: 700px;
-}
-
 .sections-img{
-    max-width:600px;
+    max-width:690px;
 }
 
 .col-sections p{
@@ -122,7 +118,7 @@
     margin-left: 5%;
 }
 .col-sections-even p{
-    margin-right: 5%;
+    margin-right: 7%;
 }
 .first{
     order: 1;
