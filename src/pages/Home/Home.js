@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react';
 import { useTranslation } from "react-i18next";
-import { Container, Row, Col, Image } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
 import { ImArrowRight2 } from 'react-icons/im';
 
+import { Image } from "react-image-and-background-image-fade";
 import "./home.css";
 
 function Home() {
@@ -65,7 +66,7 @@ function Home() {
                             </p>
                         </Col>
                         <Col lg className={ firstLoadMediaQuery || mediaQuery ? 'd-flex justify-content-center first' : 'd-flex justify-content-start' }>
-                            <Image src="./assets/images/me.png" alt="Drawing of Laszlo Scheers" className="hero-img" fluid></Image>
+                            <Image src="./assets/images/me.png" alt="Drawing of Laszlo Scheers" className="hero-img" isresponsive></Image>
                         </Col>
                     </Row>
                 </Container>
@@ -100,7 +101,7 @@ function Home() {
                             <a href="https://festriptickets.fly.dev/" target="_blank" rel="noreferrer" className='nav-link bold home-link mt-3' >{t('visit_web')}<span className='ms-2'><ImArrowRight2 className='expand'/></span></a>
                         </Col>
                         <Col lg className="d-flex justify-content-center">
-                            <Image src="./assets/images/festrip.png" alt="Example of Litletown's web page" className="sections-img" fluid ></Image>
+                            <Image src="./assets/images/festrip.png" alt="Example of Litletown's web page" className="sections-img" isresponsive ></Image>
                         </Col>
                     </Row>
                 </Container>
@@ -111,7 +112,7 @@ function Home() {
                 <Container>
                     <Row className="row-sections d-flex align-items-center">
                         <Col lg className={ firstLoadMediaQuery || mediaQuery ? 'd-flex justify-content-center last' : 'd-flex justify-content-center' }>
-                            <Image src="./assets/images/watson-s.png" alt="Example of Litletown's web page" className="sections-img" fluid ></Image>
+                            <Image src="./assets/images/watson-s.png" alt="Example of Litletown's web page" className="sections-img" isresponsive ></Image>
                         </Col>
                         <Col lg className={ firstLoadMediaQuery || mediaQuery ? 'col-sections-odd col-sections first' : 'col-sections-odd col-sections' }>
                             <h2 className="bold mb-4">Football Hub</h2>
@@ -132,7 +133,7 @@ function Home() {
                             <a href="https://laszloscheers.github.io/watsons_detective_agency/" target="_blank" rel="noreferrer" className='nav-link bold home-link mt-3' >{t('visit_web')}<span className='ms-2 '><ImArrowRight2 className='expand'/></span></a>
                         </Col>
                         <Col lg className="d-flex justify-content-center">
-                            <Image src="./assets/images/watson-s.png" alt="Example of Litletown's web page" className="sections-img" fluid ></Image>
+                            <Image src="./assets/images/watson-s.png" alt="Example of Litletown's web page" className="sections-img" isresponsive ></Image>
                         </Col>
                     </Row>
                 </Container>
