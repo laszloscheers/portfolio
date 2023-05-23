@@ -43,7 +43,7 @@ function Footer() {
         width: window.innerWidth
       })
     }
-    window.addEventListener('resize', handleResize)
+    window.addEventListener('resize', handleResize);
 
     window.matchMedia("(max-width: 991px)").addEventListener("change", e => {
       const mediaMatches = e.matches;
