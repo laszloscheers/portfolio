@@ -111,7 +111,7 @@ function Home() {
                 <Container>
                     <Row className="row-sections d-flex align-items-center">
                         <Col lg className={ firstLoadMediaQuery || mediaQuery ? 'd-flex justify-content-center last' : 'd-flex justify-content-center' }>
-                            <Image src="./assets/images/watson-s.png" alt="Example of Litletown's web page" className="sections-img" fluid ></Image>
+                            <Image src="./assets/images/footballhub.png" alt="Example of Litletown's web page" className="sections-img" fluid ></Image>
                         </Col>
                         <Col lg className={ firstLoadMediaQuery || mediaQuery ? 'col-sections-odd col-sections first' : 'col-sections-odd col-sections' }>
                             <h2 className="bold mb-4">Football Hub</h2>
@@ -132,7 +132,7 @@ function Home() {
                             <a href="https://laszloscheers.github.io/watsons_detective_agency/" target="_blank" rel="noreferrer" className='nav-link bold home-link mt-3' >{t('visit_web')}<span className='ms-2 '><ImArrowRight2 className='expand'/></span></a>
                         </Col>
                         <Col lg className="d-flex justify-content-center">
-                            <Image src="./assets/images/watson-s.png" alt="Example of Litletown's web page" className="sections-img" fluid ></Image>
+                            <Image src="./assets/images/watsons.png" alt="Example of Litletown's web page" className="sections-img" fluid ></Image>
                         </Col>
                     </Row>
                 </Container>
