@@ -78,7 +78,7 @@ function Home() {
 
                         {/* Media query selects the class corresponding with the size of the screen */}
                         <Col lg className={ firstLoadMediaQuery || mediaQuery ? 'd-flex justify-content-center last' : 'd-flex justify-content-center ps-0' }>
-                            <Image src="./assets/images/littletown.png" alt="Example of Litletown's web page" className="first-img" ></Image>
+                        <a href="https://littletownsagora.fly.dev/" target="_blank" rel="noreferrer" className='img-link' ><Image src="./assets/images/littletown.png" alt="Example of Litletown's web page" className="first-img" ></Image></a>
                         </Col>
                         <Col lg className={ firstLoadMediaQuery || mediaQuery ? 'col-sections-odd col-sections first' : 'col-sections-odd col-sections' }>
                             <h2 className="bold mb-4">Littletown's Agora</h2>
@@ -100,7 +100,7 @@ function Home() {
                             <a href="https://festriptickets.fly.dev/" target="_blank" rel="noreferrer" className='nav-link bold home-link mt-3' >{t('visit_web')}<span className='ms-2'><ImArrowRight2 className='expand'/></span></a>
                         </Col>
                         <Col lg className="d-flex justify-content-center">
-                            <Image src="./assets/images/festrip.png" alt="Example of Litletown's web page" className="sections-img" fluid ></Image>
+                        <a href="https://festriptickets.fly.dev/" target="_blank" rel="noreferrer" className='img-link' ><Image src="./assets/images/festrip.png" alt="Example of Litletown's web page" className="sections-img" fluid ></Image></a>
                         </Col>
                     </Row>
                 </Container>
@@ -111,7 +111,7 @@ function Home() {
                 <Container>
                     <Row className="row-sections d-flex align-items-center">
                         <Col lg className={ firstLoadMediaQuery || mediaQuery ? 'd-flex justify-content-center last' : 'd-flex justify-content-center' }>
-                            <Image src="./assets/images/footballhub.png" alt="Example of Litletown's web page" className="sections-img" fluid ></Image>
+                        <a href="https://thefootballhub.netlify.app/" target="_blank" rel="noreferrer" className='img-link' ><Image src="./assets/images/footballhub.png" alt="Example of Litletown's web page" className="sections-img" fluid ></Image></a>
                         </Col>
                         <Col lg className={ firstLoadMediaQuery || mediaQuery ? 'col-sections-odd col-sections first' : 'col-sections-odd col-sections' }>
                             <h2 className="bold mb-4">Football Hub</h2>
@@ -132,7 +132,7 @@ function Home() {
                             <a href="https://laszloscheers.github.io/watsons_detective_agency/" target="_blank" rel="noreferrer" className='nav-link bold home-link mt-3' >{t('visit_web')}<span className='ms-2 '><ImArrowRight2 className='expand'/></span></a>
                         </Col>
                         <Col lg className="d-flex justify-content-center">
-                            <Image src="./assets/images/watsons.png" alt="Example of Litletown's web page" className="sections-img" fluid ></Image>
+                        <a href="https://laszloscheers.github.io/watsons_detective_agency/" target="_blank" rel="noreferrer" className='img-link' ><Image src="./assets/images/watsons.png" alt="Example of Litletown's web page" className="sections-img" fluid ></Image></a>
                         </Col>
                     </Row>
                 </Container>

@@ -255,4 +255,10 @@
     transition: none;
     transform: scale(1.1);
 }
-  
+.img-link{
+    transition: none;
+}
+.img-link:hover{
+    transform: scale(1.02);
+    transition: all .3s ease-in-out;
+}
