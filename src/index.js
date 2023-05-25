@@ -41,7 +41,7 @@ const skeletonOption = {
 
 const loadingMarkup = (
   <div>
-      <Lottie options={skeletonOption} width="60%"/>
+      <Lottie options={skeletonOption} width="65%"/>
   </div>
 )
 

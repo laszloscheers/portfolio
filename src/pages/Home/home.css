@@ -141,8 +141,11 @@
 
 @media (min-width: 1400px){
     .first-img{
-        min-width: 650px;
-    }    
+        max-width: 550px;
+    }
+    .sections-img{
+        max-width: 550px;
+    }
 }
 
 @media (max-width: 1399px){

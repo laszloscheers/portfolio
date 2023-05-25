@@ -15,13 +15,13 @@ function Footer() {
 
   const changeVisivility = () => {
       if (window.scrollY >= 70){
-          setArrowUp(true)
+          setArrowUp(true);
       } else{
-          setArrowUp(false)
+          setArrowUp(false);
       }
   };
 
-  window.addEventListener('scroll', changeVisivility)
+  window.addEventListener('scroll', changeVisivility);
 
   // Handles offcanvas inner text visiblity for small screens and manage viewport changes for mobiles and tablets landscape mode.
 
@@ -35,7 +35,7 @@ function Footer() {
   const [dimensions, setDimensions] = useState({
     height: window.innerHeight,
     width: window.innerWidth
-  })
+  });
   useEffect(() => {
     function handleResize() {
       setDimensions({
@@ -48,9 +48,9 @@ function Footer() {
     window.matchMedia("(max-width: 991px)").addEventListener("change", e => {
       const mediaMatches = e.matches;
       if (mediaMatches){
-        setMediaQuery(true)
+        setMediaQuery(true);
       } else{
-        setMediaQuery(false)
+        setMediaQuery(false);
       }
     });
   },[dimensions]);

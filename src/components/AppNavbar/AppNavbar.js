@@ -36,13 +36,13 @@ const AppNavbar = () => {
 
     const changeNavColour = () => {
         if (window.scrollY >= 65){
-            setNavbar(true)
+            setNavbar(true);
         } else{
-            setNavbar(false)
+            setNavbar(false);
         }
     };
 
-    window.addEventListener('scroll', changeNavColour)
+    window.addEventListener('scroll', changeNavColour);
     
     // Handles offcanvas inner text visiblity for small screens and manage viewport changes for mobiles and tablets landscape mode.
 
@@ -69,14 +69,14 @@ const AppNavbar = () => {
           width: window.innerWidth
         })
       }
-      window.addEventListener('resize', handleResize)
+      window.addEventListener('resize', handleResize);
 
       window.matchMedia("(max-width: 576px)").addEventListener("change", e => {
         const mediaMatches = e.matches;
         if (mediaMatches){
-          setMediaQuery(true)
+          setMediaQuery(true);
         } else{
-          setMediaQuery(false)
+          setMediaQuery(false);
         }
       });
     },[dimensions, t]);

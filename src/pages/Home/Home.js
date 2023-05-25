@@ -30,7 +30,7 @@ function Home() {
           width: window.innerWidth
         })
       }
-      window.addEventListener('resize', handleResize)
+      window.addEventListener('resize', handleResize);
 
       window.matchMedia("(max-width: 991px)").addEventListener("change", e => {
         const mediaMatches = e.matches;
@@ -82,7 +82,7 @@ function Home() {
                         </Col>
                         <Col lg className={ firstLoadMediaQuery || mediaQuery ? 'col-sections-odd col-sections first' : 'col-sections-odd col-sections' }>
                             <h2 className="bold mb-4">Littletown's Agora</h2>
-                            <p>{t('little_town_description')}</p>
+                            <p>{t('little_town_description_1')}<span className="bold">{t('little_town_description_2')}</span>{t('little_town_description_3')}<span className="bold">{t('little_town_description_4')}</span>{t('little_town_description_5')}<span className="bold">{t('little_town_description_6')}</span>{t('little_town_description_7')}</p>
                             <a href="https://littletownsagora.fly.dev/" target="_blank" rel="noreferrer" className='nav-link bold home-link' >{t('visit_web')}<span className='ms-2'><ImArrowRight2 className='expand'/></span></a>
                         </Col>
 
@@ -96,7 +96,7 @@ function Home() {
                     <Row className="row-sections d-flex align-items-center">
                         <Col lg className='col-sections col-sections-even'>
                             <h2 className="bold mb-4">{t('festrip_title')}</h2>
-                            <p>{t('festrip_description')}</p>
+                            <p>{t('festrip_description_1')}<span className="bold">{t('festrip_description_2')}</span>{t('festrip_description_3')}<span className="bold">{t('festrip_description_4')}</span>{t('festrip_description_5')}<span className="bold">{t('festrip_description_6')}</span>{t('festrip_description_7')}</p>
                             <a href="https://festriptickets.fly.dev/" target="_blank" rel="noreferrer" className='nav-link bold home-link mt-3' >{t('visit_web')}<span className='ms-2'><ImArrowRight2 className='expand'/></span></a>
                         </Col>
                         <Col lg className="d-flex justify-content-center">
@@ -115,7 +115,7 @@ function Home() {
                         </Col>
                         <Col lg className={ firstLoadMediaQuery || mediaQuery ? 'col-sections-odd col-sections first' : 'col-sections-odd col-sections' }>
                             <h2 className="bold mb-4">Football Hub</h2>
-                            <p>{t('football_app_description')}</p>
+                            <p>{t('football_app_description_1')}<span className="bold">{t('football_app_description_2')}</span>{t('football_app_description_3')}<span className="bold">{t('football_app_description_4')}</span>{t('football_app_description_5')}<span className="bold">{t('football_app_description_6')}</span>{t('football_app_description_7')}<span className="bold">{t('football_app_description_8')}</span>{t('football_app_description_9')}</p>
                             <a href="https://thefootballhub.netlify.app/" target="_blank" rel="noreferrer" className='nav-link bold home-link mt-3' >{t('visit_web')}<span className='ms-2'><ImArrowRight2 className='expand'/></span></a>
                         </Col>
                     </Row>
@@ -128,7 +128,7 @@ function Home() {
                     <Row className="row-sections d-flex align-items-center">
                         <Col lg className='col-sections col-sections-even'>
                             <h2 className="bold mb-4">{t('watsons_title')}</h2>
-                            <p>{t('watsons_description')}</p>
+                            <p>{t('watsons_description_1')}<span className="bold">{t('watsons_description_2')}</span>{t('watsons_description_3')}<span className="bold">{t('watsons_description_4')}</span>{t('watsons_description_5')}</p>
                             <a href="https://laszloscheers.github.io/watsons_detective_agency/" target="_blank" rel="noreferrer" className='nav-link bold home-link mt-3' >{t('visit_web')}<span className='ms-2 '><ImArrowRight2 className='expand'/></span></a>
                         </Col>
                         <Col lg className="d-flex justify-content-center">
